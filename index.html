@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="meta_title">MegaFulfilment (megaff.uz) — Premium Fulfillment Markazi</title>
+  <meta name="description" content="MegaFulfilment (megaff.uz) — Uzum Market, Wildberries, Yandex Market va Ozon uçun tõliq fulfillment xizmati. 45 kun bepul saqlaş, qadoqlaş, ştrix-kodlaş va yetkazib beriş. Tashkent Index.">
+  <link rel="icon" type="image/png" href="Logo.png">
+  <link rel="apple-touch-icon" href="Logo.png">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <!-- Google Fonts: Playfair Display (Serif) & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              cream: '#F2F7FF',
+              creamDark: '#E4EEFD',
+              blue: '#2563EB',
+              blueLight: '#60A5FA',
+              navy: '#0B2345',
+              navyCard: '#12213D',
+              border: '#D6E3F6'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-sans antialiased text-[#0B2345] dark:text-[#E6EEFA] transition-colors duration-300">
+
+  <!-- ================= FLOATING HEADER BAR ================= -->
+  <header class="sticky top-3 z-40 w-[96%] max-w-[1600px] mx-auto px-1 sm:px-3 mt-3">
+    <div class="bg-white/95 dark:bg-[#0B2345]/95 backdrop-blur-md border border-[#DAE6F8] dark:border-[#233652] rounded-full px-6 sm:px-8 lg:px-10 py-3.5 shadow-lg flex items-center justify-between gap-4 transition-all">
+      
+      <!-- Logo: Mega + Fulfilment -->
+      <a href="#hero" class="flex items-center gap-2.5 group shrink-0">
+        <img src="Logo.png" alt="MegaFulfilment Logo" class="w-10 h-10 rounded-xl object-contain bg-white p-0.5 shadow-sm group-hover:scale-105 transition">
+        <div class="flex items-baseline gap-1">
+          <span class="text-xl font-extrabold tracking-tight font-serif text-[#0B2345] dark:text-white">Mega</span>
+          <span class="text-xl font-serif italic text-[#2563EB] dark:text-[#60A5FA]">Fulfilment</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden xl:flex items-center justify-center gap-6 2xl:gap-8 text-[13.5px] font-semibold text-[#475A78] dark:text-slate-300 whitespace-nowrap">
+        <a href="#about" class="hover:text-[#2563EB] transition" data-i18n="nav_about">Biz haqimizda</a>
+        <a href="#services" class="hover:text-[#2563EB] transition" data-i18n="nav_services">Xizmatlar</a>
+        <a href="#calculator" class="hover:text-[#2563EB] transition" data-i18n="nav_calc">Narxlar kalkulyatori</a>
+        <a href="#faq" class="hover:text-[#2563EB] transition" data-i18n="nav_faq">Savol-javob</a>
+        <a href="#contact" class="hover:text-[#2563EB] transition" data-i18n="nav_contact">Boğlaniş</a>
+      </nav>
+
+      <!-- Right Controls: Dark Mode + 4-Language Switcher -->
+      <div class="flex items-center gap-3 shrink-0">
+        <!-- Dark Mode Toggle -->
+        <button id="theme-toggle" onclick="document.documentElement.classList.toggle('dark')" class="w-9 h-9 rounded-full bg-[#F2F7FF] dark:bg-[#172947] border border-[#D0DEF4] dark:border-[#2C4264] flex items-center justify-center text-[#475A78] dark:text-sky-300 hover:border-[#2563EB] transition" title="Dark / Light Mode">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+        </button>
+
+        <!-- 4-Language Selector (UZ | RU | EN | ZH) -->
+  <div class="lang-dropdown relative inline-block" id="langDropdown">
+  <!-- Hozirgi tanlangan til (trigger) -->
+  <button
+    onclick="toggleLangDropdown(event)"
+    class="flex items-center gap-2 bg-[#F2F7FF] dark:bg-[#172947] border border-[#D0DEF4] dark:border-[#2C4264] rounded-full px-3 py-1.5 text-[11px] font-bold text-[#0B2345] dark:text-white"
+  >
+    <span id="currentLangLabel">UZ</span>
+    <svg id="langChevron" class="w-3 h-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+    </svg>
+  </button>
+
+  <!-- Pastga tushadigan oyna -->
+  <div
+    id="langMenu"
+    class="hidden absolute right-0 mt-2 z-50 min-w-[110px] bg-[#F2F7FF] dark:bg-[#172947] border border-[#D0DEF4] dark:border-[#2C4264] rounded-2xl shadow-lg p-1 text-[11px] font-bold text-[#0B2345] dark:text-white"
+  >
+    <button onclick="setLang('uz')" data-lang-btn="uz" class="w-full text-left px-3 py-1.5 rounded-xl transition hover:text-[#2563EB] hover:bg-[#E1ECFC] dark:hover:bg-[#273C5E]">UZ</button>
+    <button onclick="setLang('ru')" data-lang-btn="ru" class="w-full text-left px-3 py-1.5 rounded-xl transition hover:text-[#2563EB] hover:bg-[#E1ECFC] dark:hover:bg-[#273C5E]">RU</button>
+    <button onclick="setLang('en')" data-lang-btn="en" class="w-full text-left px-3 py-1.5 rounded-xl transition hover:text-[#2563EB] hover:bg-[#E1ECFC] dark:hover:bg-[#273C5E]">EN</button>
+    <button onclick="setLang('zh')" data-lang-btn="zh" class="w-full text-left px-3 py-1.5 rounded-xl transition hover:text-[#2563EB] hover:bg-[#E1ECFC] dark:hover:bg-[#273C5E]">中文</button>
+  </div>
+</div>
+
+        <!-- Mobile Menu Button -->
+        <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="xl:hidden p-2 rounded-full bg-[#F2F7FF] dark:bg-[#172947] border border-[#D0DEF4] text-[#0B2345] dark:text-white">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden xl:hidden mt-2 bg-white dark:bg-[#0B2345] border border-[#DAE6F8] dark:border-[#233652] rounded-2xl p-4 shadow-xl space-y-2 text-sm font-semibold">
+      <a href="#about" class="block p-2 rounded-lg hover:bg-[#F2F7FF] dark:hover:bg-[#172947]" data-i18n="nav_about">Biz haqimizda</a>
+      <a href="#services" class="block p-2 rounded-lg hover:bg-[#F2F7FF] dark:hover:bg-[#172947]" data-i18n="nav_services">Xizmatlar</a>
+      <a href="#calculator" class="block p-2 rounded-lg hover:bg-[#F2F7FF] dark:hover:bg-[#172947]" data-i18n="nav_calc">Narxlar kalkulyatori</a>
+      <a href="#faq" class="block p-2 rounded-lg hover:bg-[#F2F7FF] dark:hover:bg-[#172947]" data-i18n="nav_faq">Savol-javob</a>
+      <a href="#contact" class="block p-2 rounded-lg hover:bg-[#F2F7FF] dark:hover:bg-[#172947]" data-i18n="nav_contact">Boğlaniş</a>
+    </div>
+  </header>
+
+  <!-- ================= LEFT FIXED SIDE DOT NAVIGATION (BARAKA 1:1) ================= -->
+  <aside class="side-dot-nav" aria-label="Sahifa bo'limlari" data-i18n-aria="aria_sections">
+    <div class="side-dot-track" id="side-dot-track">
+      <a href="#hero" data-section-dot="hero" class="side-dot-item active">
+        <span class="side-dot-circle"></span>
+        <span class="side-dot-label" data-i18n="nav_home">Boş sahifa</span>
+      </a>
+      <a href="#about" data-section-dot="about" class="side-dot-item">
+        <span class="side-dot-circle"></span>
+        <span class="side-dot-label" data-i18n="nav_about">Biz haqimizda</span>
+      </a>
+      <a href="#services" data-section-dot="services" class="side-dot-item">
+        <span class="side-dot-circle"></span>
+        <span class="side-dot-label" data-i18n="nav_services">Xizmatlar</span>
+      </a>
+      <a href="#calculator" data-section-dot="calculator" class="side-dot-item">
+        <span class="side-dot-circle"></span>
+        <span class="side-dot-label" data-i18n="nav_calc">Narxlar kalkulyatori</span>
+      </a>
+      <a href="#storage" data-section-dot="storage" class="side-dot-item">
+        <span class="side-dot-circle"></span>
+        <span class="side-dot-label" data-i18n="nav_storage">Saqlaş va hisob</span>
+      </a>
+      <a href="#partners" data-section-dot="partners" class="side-dot-item">
+        <span class="side-dot-circle"></span>
+        <span class="side-dot-label" data-i18n="nav_partners">Marketpleyslar</span>
+      </a>
+      <a href="#reviews" data-section-dot="reviews" class="side-dot-item">
+        <span class="side-dot-circle"></span>
+        <span class="side-dot-label" data-i18n="nav_reviews">Mijozlar fikri</span>
+      </a>
+      <a href="#faq" data-section-dot="faq" class="side-dot-item">
+        <span class="side-dot-circle"></span>
+        <span class="side-dot-label" data-i18n="nav_faq">Savol-javob</span>
+      </a>
+      <a href="#contact" data-section-dot="contact" class="side-dot-item">
+        <span class="side-dot-circle"></span>
+        <span class="side-dot-label" data-i18n="nav_contact">Boğlaniş</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="hero" class="pt-14 pb-20 lg:pt-20 lg:pb-24 relative overflow-hidden">
+    <!-- Subtle decorative radial glow -->
+    <div class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[720px] h-[380px] bg-gradient-to-tr from-[#60A5FA]/20 via-[#2563EB]/10 to-transparent rounded-full blur-3xl"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-4xl mx-auto space-y-6 reveal-up">
+        
+        <!-- Badge -->
+        <div class="badge-pill shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span data-i18n="v1_hero_badge">MARKETPLEYS SOTUVÇILARI UÇUN FULFILLMENT</span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-sans text-[#0B2345] dark:text-white leading-[1.15]">
+          <span data-i18n="v1_hero_title_1">Tovaringizni qadoqlaşga vaqt sarflamang —</span> <br>
+          <span class="font-serif italic text-[#2563EB] dark:text-[#60A5FA]" data-i18n="v1_hero_title_2">bu işni bizga topşiring</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-base sm:text-lg text-[#475A78] dark:text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed" data-i18n="v1_hero_sub">Siz savdoni rivojlantiring, buyurtmalarni qadoqlaşni biz bajaramiz. Tovarni qabul qiliş, tekşiriş, qadoqlaş, etiketkalaş va marketpleys omboriga yetkazib beriş — barçasi bir xizmatda.</p>
+
+        <!-- CTA: single primary action -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-3">
+          <a href="#contact" class="w-full sm:w-auto primary-gradient-btn rounded-full px-10 py-4 flex items-center justify-center gap-2 shadow-lg text-sm sm:text-base">
+            <span data-i18n="v1_cta_calc">Bepul smeta oliş</span>
+            <span>→</span>
+          </a>
+          <a href="https://t.me/megaffuz" target="_blank" rel="noopener" class="w-full sm:w-auto bg-white dark:bg-[#0F1D36] border border-[#BCD0F0] dark:border-[#2C4264] text-[#0B2345] dark:text-white font-bold rounded-full px-8 py-4 hover:border-[#2563EB] transition flex items-center justify-center gap-2 text-sm shadow-sm">
+            <img src="assets/icon-telegram.png" alt="Telegram" class="w-5 h-5 object-contain">
+            <span data-i18n="hero_cta_tg">Telegram orqali yoziş</span>
+          </a>
+        </div>
+        <div class="flex flex-col items-center gap-3">
+          <p class="text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400" data-i18n="hero_promise">10 daqiqa içida javob beramiz · 100% moddiy javobgarlik şartnomada</p>
+        </div>
+
+        <!-- Official Partner Marketplace Icons Strip -->
+        <div class="pt-4 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          <a href="#partners" class="inline-flex items-center gap-3 pl-2 pr-5 py-1.5 rounded-full bg-white dark:bg-[#0F1D36] border border-[#D9E4F5] dark:border-[#2C4264] shadow-sm hover:shadow-md hover:border-[#2563EB] transition">
+            <span class="w-8 h-8 rounded-full bg-white dark:bg-[#172947] border border-slate-200/80 dark:border-slate-700 shadow-sm flex items-center justify-center shrink-0">
+              <img src="assets/icon-uzum.png" alt="Uzum Market" class="w-5 h-5 rounded-full object-contain">
+            </span>
+            <span class="text-xs sm:text-sm font-medium text-[#0B2345] dark:text-white">Uzum Market</span>
+          </a>
+          <a href="#partners" class="inline-flex items-center gap-3 pl-2 pr-5 py-1.5 rounded-full bg-white dark:bg-[#0F1D36] border border-[#D9E4F5] dark:border-[#2C4264] shadow-sm hover:shadow-md hover:border-[#2563EB] transition">
+            <span class="w-8 h-8 rounded-full bg-white dark:bg-[#172947] border border-slate-200/80 dark:border-slate-700 shadow-sm flex items-center justify-center shrink-0">
+              <img src="assets/icon-yandex.png" alt="Yandex Market" class="w-5 h-5 rounded-full object-contain">
+            </span>
+            <span class="text-xs sm:text-sm font-medium text-[#0B2345] dark:text-white">Yandex Market</span>
+          </a>
+          <a href="#partners" class="inline-flex items-center gap-3 pl-2 pr-5 py-1.5 rounded-full bg-white dark:bg-[#0F1D36] border border-[#D9E4F5] dark:border-[#2C4264] shadow-sm hover:shadow-md hover:border-[#2563EB] transition">
+            <span class="w-8 h-8 rounded-full bg-white dark:bg-[#172947] border border-slate-200/80 dark:border-slate-700 shadow-sm flex items-center justify-center shrink-0">
+              <img src="assets/icon-wb.png" alt="Wildberries" class="w-5 h-5 rounded-full object-contain">
+            </span>
+            <span class="text-xs sm:text-sm font-medium text-[#0B2345] dark:text-white">Wildberries</span>
+          </a>
+          <a href="#partners" class="inline-flex items-center gap-3 pl-2 pr-5 py-1.5 rounded-full bg-white dark:bg-[#0F1D36] border border-[#D9E4F5] dark:border-[#2C4264] shadow-sm hover:shadow-md hover:border-[#2563EB] transition">
+            <span class="w-8 h-8 rounded-full bg-white dark:bg-[#172947] border border-slate-200/80 dark:border-slate-700 shadow-sm flex items-center justify-center shrink-0">
+              <img src="assets/icon-ozon.png" alt="Ozon" class="w-5 h-5 rounded-full object-contain">
+            </span>
+            <span class="text-xs sm:text-sm font-medium text-[#0B2345] dark:text-white">Ozon</span>
+          </a>
+        </div>
+
+        <!-- 4 Key Stat Cards -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-8 max-w-4xl mx-auto text-center">
+          <div class="floating-card p-5 animate-float" style="animation-delay: 0s;">
+            <div class="text-2xl sm:text-3xl font-extrabold font-serif text-[#0B2345] dark:text-white" data-i18n="v1_stat1_val">45 kun</div>
+            <div class="text-[11px] font-bold uppercase tracking-wider text-[#2563EB] mt-1" data-i18n="v1_stat1_lbl">BEPUL SAQLAŞ</div>
+          </div>
+          <div class="floating-card p-5 animate-float" style="animation-delay: 0.5s;">
+            <div class="text-2xl sm:text-3xl font-extrabold font-serif text-[#0B2345] dark:text-white" data-i18n="v1_stat2_val">4+</div>
+            <div class="text-[11px] font-bold uppercase tracking-wider text-[#2563EB] mt-1" data-i18n="v1_stat2_lbl">YIRIK MARKETPLEYS</div>
+          </div>
+          <div class="floating-card p-5 animate-float" style="animation-delay: 1s;">
+            <div class="text-2xl sm:text-3xl font-extrabold font-serif text-[#0B2345] dark:text-white" data-i18n="v1_stat3_val">24/7</div>
+            <div class="text-[11px] font-bold uppercase tracking-wider text-[#2563EB] mt-1" data-i18n="v1_stat3_lbl">SHAXSIY MENEJER VA BOT</div>
+          </div>
+          <div class="floating-card p-5 animate-float" style="animation-delay: 1.5s;">
+            <div class="text-2xl sm:text-3xl font-extrabold font-serif text-[#0B2345] dark:text-white" data-i18n="v1_stat4_val">600 so'm</div>
+            <div class="text-[11px] font-bold uppercase tracking-wider text-[#2563EB] mt-1" data-i18n="v1_stat4_lbl">BOSHLANG'ICH TARIF</div>
+          </div>
+       </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OG'RIQ -> WHY -> HOW -> KAFOLAT ================= -->
+  <section id="pain" class="py-20 border-t border-[#D6E3F6] dark:border-[#233652]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <div class="badge-pill" data-i18n="pain_badge">BU SIZGA TANIŞMI?</div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0B2345] dark:text-white font-sans">
+          <span data-i18n="pain_title_1">Sotuvçilarni tõxtatib qõyadigan</span>
+          <span class="font-serif italic text-[#2563EB] dark:text-[#60A5FA]" data-i18n="pain_title_2">5 ta oğriq</span>
+        </h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"><div class="floating-card overflow-hidden flex flex-col"><img src="assets/karta1.webp" alt="" loading="lazy" width="800" height="600" class="w-full aspect-[4/3] object-cover"><div class="p-6 space-y-2"><h3 class="text-base font-bold text-[#0B2345] dark:text-white" data-i18n="pain1_t">Uyda õzingiz qadoqlaysiz</h3><p class="text-xs sm:text-sm text-[#475A78] dark:text-slate-400 leading-relaxed" data-i18n="pain1_d">Vaqt ketadi, asab buziladi, reklama va yangi tovarga qõl tegmaydi — õsiş tõxtaydi.</p></div></div><div class="floating-card overflow-hidden flex flex-col"><img src="assets/karta2.webp" alt="" loading="lazy" width="800" height="600" class="w-full aspect-[4/3] object-cover"><div class="p-6 space-y-2"><h3 class="text-base font-bold text-[#0B2345] dark:text-white" data-i18n="pain2_t">Etiketka yoki ştrix-kod xato</h3><p class="text-xs sm:text-sm text-[#475A78] dark:text-slate-400 leading-relaxed" data-i18n="pain2_d">Marketpleys partiyani qaytaradi, jarima bõlişi mumkin, tovar sotuvdan tuşib qoladi.</p></div></div><div class="floating-card overflow-hidden flex flex-col"><img src="assets/karta3.webp" alt="" loading="lazy" width="800" height="600" class="w-full aspect-[4/3] object-cover"><div class="p-6 space-y-2"><h3 class="text-base font-bold text-[#0B2345] dark:text-white" data-i18n="pain3_t">Xitoydan kelgan tovarda brak aniqlanmagan</h3><p class="text-xs sm:text-sm text-[#475A78] dark:text-slate-400 leading-relaxed" data-i18n="pain3_d">Xaridor qaytaradi, reyting tuşadi, pul yõqotiladi.</p></div></div><div class="floating-card overflow-hidden flex flex-col"><img src="assets/karta4.webp" alt="" loading="lazy" width="800" height="600" class="w-full aspect-[4/3] object-cover"><div class="p-6 space-y-2"><h3 class="text-base font-bold text-[#0B2345] dark:text-white" data-i18n="pain4_t">Tovar qayerda va qança qolgani noma'lum</h3><p class="text-xs sm:text-sm text-[#475A78] dark:text-slate-400 leading-relaxed" data-i18n="pain4_d">Tovar tugab qoladi, sotuv pozitsiyasi pasayadi yoki ortiqça buyurtma berasiz.</p></div></div><div class="floating-card overflow-hidden flex flex-col"><img src="assets/karta5.webp" alt="" loading="lazy" width="800" height="600" class="w-full aspect-[4/3] object-cover"><div class="p-6 space-y-2"><h3 class="text-base font-bold text-[#0B2345] dark:text-white" data-i18n="pain5_t">Õzingizning ombor ijarasi</h3><p class="text-xs sm:text-sm text-[#475A78] dark:text-slate-400 leading-relaxed" data-i18n="pain5_d">Doimiy xarajat — savdo bõlmagan oylarda ham tõlanadi.</p></div></div></div>
+
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0B2345] dark:text-white" data-i18n="why_title">Sotuvçining vazifasi — tovar tanlaş va sotiş</h2>
+        <p class="text-[#475A78] dark:text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="why_desc">Qadoqlaş va logistika vaqtingizni yeydi. Biz ularni 100% moddiy javobgarlik bilan õz zimmamizga olamiz, siz esa faqat savdoga e'tibor qaratasiz.</p>
+      </div>
+
+      <div id="how" class="space-y-6">
+        <div class="text-center space-y-3">
+          <div class="badge-pill" data-i18n="how_badge">QANDAY IŞLAYDI</div>
+          <h2 class="text-3xl font-extrabold text-[#0B2345] dark:text-white" data-i18n="how_title">4 qadamda tayyor</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"><div class="floating-card p-6 space-y-2"><div class="w-9 h-9 rounded-full bg-[#2563EB] text-white font-extrabold flex items-center justify-center">1</div><h3 class="text-base font-bold text-[#0B2345] dark:text-white" data-i18n="how1_t">Tovarni olib keling</h3><p class="text-xs sm:text-sm text-[#475A78] dark:text-slate-400 leading-relaxed" data-i18n="how1_d">Omborimizga olib keling yoki Xitoydan tõğridan-tõğri jõnating.</p></div><div class="floating-card p-6 space-y-2"><div class="w-9 h-9 rounded-full bg-[#2563EB] text-white font-extrabold flex items-center justify-center">2</div><h3 class="text-base font-bold text-[#0B2345] dark:text-white" data-i18n="how2_t">Sanaymiz va saralaymiz</h3><p class="text-xs sm:text-sm text-[#475A78] dark:text-slate-400 leading-relaxed" data-i18n="how2_d">Tovarni sanaymiz, brakni ajratamiz va video-hisobot beramiz.</p></div><div class="floating-card p-6 space-y-2"><div class="w-9 h-9 rounded-full bg-[#2563EB] text-white font-extrabold flex items-center justify-center">3</div><h3 class="text-base font-bold text-[#0B2345] dark:text-white" data-i18n="how3_t">Qadoqlaymiz</h3><p class="text-xs sm:text-sm text-[#475A78] dark:text-slate-400 leading-relaxed" data-i18n="how3_d">Qadoqlaymiz, etiketka yopiştiramiz va markirovka qilamiz.</p></div><div class="floating-card p-6 space-y-2"><div class="w-9 h-9 rounded-full bg-[#2563EB] text-white font-extrabold flex items-center justify-center">4</div><h3 class="text-base font-bold text-[#0B2345] dark:text-white" data-i18n="how4_t">24–48 soatda topşiramiz</h3><p class="text-xs sm:text-sm text-[#475A78] dark:text-slate-400 leading-relaxed" data-i18n="how4_d">Marketpleys omboriga topşiramiz. Hisobotni MegaBOT va Google Sheets'da kõrasiz.</p></div></div>
+      </div>
+
+      <div id="guarantee" class="floating-card p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-5 border-2 border-emerald-500/40">
+        <div class="space-y-2 text-center sm:text-left">
+          <h3 class="text-xl font-extrabold text-[#0B2345] dark:text-white">🛡️ <span data-i18n="guar_title">100% moddiy javobgarlik</span></h3>
+          <p class="text-sm text-[#475A78] dark:text-slate-300 leading-relaxed" data-i18n="guar_desc">Har bir dona tovar butligi va marketpleysda qabul qilinişi uçun şartnoma asosida javob beramiz. Xato bizdan çiqsa — bepul qayta qadoqlaymiz.</p>
+        </div>
+        <a href="https://t.me/megaffuz" target="_blank" rel="noopener" class="shrink-0 primary-gradient-btn rounded-full px-7 py-3 text-sm" data-i18n="guar_btn">Şartnoma şartlarini sõraş</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BIZ HAQIMIZDA (ABOUT US) ================= -->
+  <section id="about" class="py-20 border-t border-[#D6E3F6] dark:border-[#233652]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3 reveal-up">
+        <div class="badge-pill" data-i18n="about_badge">BIZ HAQIMIZDA</div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0B2345] dark:text-white font-sans">
+          <span data-i18n="about_title_1">MegaFulfilment —</span>
+          <span class="font-serif italic text-[#2563EB] dark:text-[#60A5FA]" data-i18n="about_title_2">ishonchli logistika sherigingiz</span>
+        </h2>
+        <p class="text-[#475A78] dark:text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="about_desc">
+          Marketpleyslarda yuqori savdo qilish uchun siz faqat marketing va mahsulot tanlash bilan shug'ullaning. Tovarlarni qabul qilish, brakni tekshirish, marketpleys standartlari asosida qadoqlash, termo-etiketka yopishtirish va FBO/FBS omborlariga 24–48 soat ichida yetkazishni biz 100% moddiy javobgarlik bilan bajaramiz.
+        </p>
+      </div>
+
+      <!-- 3x2 Layout: 4 Pillars (Left 2x2) + 2 Captioned Warehouse Images (Right 1x2) -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch reveal-up">
+        
+        <!-- Row 1, Col 1: Pillar 1 -->
+        <div class="floating-card p-6 sm:p-7 flex flex-col justify-between space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-[#E6F0FE] dark:bg-[#1A2D4D] text-[#2563EB] flex items-center justify-center shadow-inner shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-base sm:text-lg font-bold text-[#0B2345] dark:text-white" data-i18n="pillar1_title">Xavfsiz saqlaş (Tashkent Index)</h3>
+            <p class="text-xs sm:text-sm text-[#526480] dark:text-slate-400 leading-relaxed" data-i18n="pillar1_desc">24/7 videokuzatuv, iqlim nazorati va yonğin xavfsizligi bilan jihozlangan zamonaviy A-klass ombor.</p>
+          </div>
+        </div>
+
+        <!-- Row 1, Col 2: Pillar 2 -->
+        <div class="floating-card p-6 sm:p-7 flex flex-col justify-between space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-[#E6F0FE] dark:bg-[#1A2D4D] text-[#2563EB] flex items-center justify-center shadow-inner shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-base sm:text-lg font-bold text-[#0B2345] dark:text-white" data-i18n="pillar2_title">24–48 soatda FBO/FBS topşiriş</h3>
+            <p class="text-xs sm:text-sm text-[#526480] dark:text-slate-400 leading-relaxed" data-i18n="pillar2_desc">Buyurtma tuşişi bilan tezkor yiğış, qadoqlaş va marketpleys qabul punktlariga navbatsiz topşiriş.</p>
+          </div>
+        </div>
+
+        <!-- Row 1, Col 3: Image 1 (rasm1) with Caption -->
+        <div class="rounded-[22px] overflow-hidden border border-[#DAE6F8] dark:border-[#233652] shadow-xl relative group min-h-[230px] h-full bg-[#0B2345]">
+          <img src="rasm1.png" onerror="this.onerror=null; this.src='rasm1.jpg';" alt="MegaFulfilment — Qadoqlash va shtrix-kodlash" data-i18n-alt="alt_packing" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+          <div class="absolute bottom-0 inset-x-0 p-5 text-white space-y-1">
+            <span class="inline-block text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#60A5FA] text-[#0B2345]" data-i18n="img1_badge">QADOQLAŞ VA MARKIROVKA</span>
+            <p class="text-xs sm:text-sm font-bold leading-snug text-white drop-shadow" data-i18n="img1_caption">
+              Marketpleys standartlari bõyiça 58×40 mm termo-etiketka va sifat nazorati
+            </p>
+          </div>
+        </div>
+
+        <!-- Row 2, Col 1: Pillar 3 -->
+        <div class="floating-card p-6 sm:p-7 flex flex-col justify-between space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-[#E6F0FE] dark:bg-[#1A2D4D] text-[#2563EB] flex items-center justify-center shadow-inner shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"/>
+            </svg>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-base sm:text-lg font-bold text-[#0B2345] dark:text-white" data-i18n="pillar3_title">Muntazam reyslar</h3>
+            <p class="text-xs sm:text-sm text-[#526480] dark:text-slate-400 leading-relaxed" data-i18n="pillar3_desc">Uzum (Xonobod), Wildberries, Yandex Market va Ozon omborlariga har kuni maxsus transport reyslari.</p>
+          </div>
+        </div>
+
+        <!-- Row 2, Col 2: Pillar 4 -->
+        <div class="floating-card p-6 sm:p-7 flex flex-col justify-between space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-[#E6F0FE] dark:bg-[#1A2D4D] text-[#2563EB] flex items-center justify-center shadow-inner shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-base sm:text-lg font-bold text-[#0B2345] dark:text-white" data-i18n="pillar4_title">100% Sifat va moddiy kafolat</h3>
+            <p class="text-xs sm:text-sm text-[#526480] dark:text-slate-400 leading-relaxed" data-i18n="pillar4_desc">Şartnoma asosida har bir dona tovar butligi va marketpleysda qabul qilinişiga tõliq javobgarlik.</p>
+          </div>
+        </div>
+
+        <!-- Row 2, Col 3: Image 2 (rasm2) with Caption -->
+        <div class="rounded-[22px] overflow-hidden border border-[#DAE6F8] dark:border-[#233652] shadow-xl relative group min-h-[230px] h-full bg-[#0B2345]">
+          <img src="rasm2.png" onerror="this.onerror=null; this.src='rasm2.jpg';" alt="MegaFulfilment — Zamonaviy ombor" data-i18n-alt="alt_warehouse" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+          <div class="absolute bottom-0 inset-x-0 p-5 text-white space-y-1">
+            <span class="inline-block text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#60A5FA] text-[#0B2345]" data-i18n="img2_badge">A-KLASS OMBOR MAJMUASI</span>
+            <p class="text-xs sm:text-sm font-bold leading-snug text-white drop-shadow" data-i18n="img2_caption">
+              Tashkent Index hududidagi zamonaviy MegaFulfilment saralaş va saqlaş markazi
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= BIZNING XIZMATLAR (SERVICES) ================= -->
+  <section id="services" class="py-20 border-t border-[#D6E3F6] dark:border-[#233652]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3 reveal-up">
+        <div class="badge-pill" data-i18n="srv_badge">BIZNING XIZMATLAR</div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0B2345] dark:text-white font-sans">
+          <span data-i18n="srv_title_1">Hammasi</span>
+          <span class="font-serif italic text-[#2563EB] dark:text-[#60A5FA]" data-i18n="srv_title_2">bir joyda — kalitgacha</span>
+        </h2>
+        <p class="text-[#475A78] dark:text-slate-300 text-sm sm:text-base" data-i18n="srv_desc">
+          Asosiy fulfillment xizmati va qo'shimcha qadoqlash imkoniyatlari. Tovaringiz xususiyatidan kelib chiqib eng optimal yechimni taqdim etamiz.
+        </p>
+      </div>
+
+      <!-- 2x2 Services Cards + Right 3D Isometric Warehouse Illustration -->
+      <div class="grid lg:grid-cols-12 gap-6 items-stretch reveal-up">
+        
+        <!-- Left: 2x2 Grid of 4 Core Services (7 cols) -->
+        <div class="lg:col-span-7 grid sm:grid-cols-2 gap-5">
+          
+          <div class="floating-card p-6 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="w-11 h-11 rounded-full bg-[#E4EEFD] dark:bg-[#1A2D4D] text-[#2563EB] flex items-center justify-center font-extrabold text-base">01</div>
+                <span class="text-[11px] font-extrabold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20" data-i18n="srv1_price">0 sõm / 45 kun</span>
+              </div>
+              <h3 class="text-lg font-bold text-[#0B2345] dark:text-white" data-i18n="srv1_title">Saqlaş</h3>
+              <p class="text-xs sm:text-sm text-[#475A78] dark:text-slate-400 leading-relaxed" data-i18n="srv1_desc">
+                Tovarlaringiz maxsus stellajlarda xavfsiz saqlanadi. Hamkorlarimiz uchun dastlabki 45 kun — mutlaqo BEPUL!
+              </p>
+            </div>
+            <a href="#calculator" class="text-xs font-bold text-[#2563EB] hover:underline inline-flex items-center gap-1" data-i18n="cta_calc_arrow">Hisoblaş →</a>
+          </div>
+
+          <div class="floating-card p-6 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="w-11 h-11 rounded-full bg-[#E4EEFD] dark:bg-[#1A2D4D] text-[#2563EB] flex items-center justify-center font-extrabold text-base">02</div>
+                <span class="text-[11px] font-extrabold px-3 py-1 rounded-full bg-[#2563EB]/15 text-[#2563EB]" data-i18n="srv2_price">600 sõmdan / dona</span>
+              </div>
+              <h3 class="text-lg font-bold text-[#0B2345] dark:text-white" data-i18n="srv2_title">Professional Qadoqlash</h3>
+              <p class="text-xs sm:text-sm text-[#475A78] dark:text-slate-400 leading-relaxed" data-i18n="srv2_desc">
+                Zip-lock va BOPP paketlar, pufakchali plyonka (pupirka), termosadkali plyonka, kurerlik paketi va 3/5 qavatli korobkalar.
+              </p>
+            </div>
+            <a href="#calculator" class="text-xs font-bold text-[#2563EB] hover:underline inline-flex items-center gap-1" data-i18n="cta_calc_arrow">Hisoblaş →</a>
+          </div>
+
+          <div class="floating-card p-6 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="w-11 h-11 rounded-full bg-[#E4EEFD] dark:bg-[#1A2D4D] text-[#2563EB] flex items-center justify-center font-extrabold text-base">03</div>
+                <span class="text-[11px] font-extrabold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400" data-i18n="srv3_price">Ichida (bepul)</span>
+              </div>
+              <h3 class="text-lg font-bold text-[#0B2345] dark:text-white" data-i18n="srv3_title">Etiketkalash va Shtrix-kod</h3>
+              <p class="text-xs sm:text-sm text-[#475A78] dark:text-slate-400 leading-relaxed" data-i18n="srv3_desc">
+                Marketpleys reglamenti bo'yicha 58x40 mm termo-etiketka, EAC belgilari va Chestniy Znak (ASL Belgisi) markirovkasi.
+              </p>
+            </div>
+            <a href="#calculator" class="text-xs font-bold text-[#2563EB] hover:underline inline-flex items-center gap-1" data-i18n="cta_calc_arrow">Hisoblaş →</a>
+          </div>
+
+          <div class="floating-card p-6 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="w-11 h-11 rounded-full bg-[#E4EEFD] dark:bg-[#1A2D4D] text-[#2563EB] flex items-center justify-center font-extrabold text-base">04</div>
+                <span class="text-[11px] font-extrabold px-3 py-1 rounded-full bg-[#2563EB]/15 text-[#2563EB]" data-i18n="srv4_price">Muntazam reyslar</span>
+              </div>
+              <h3 class="text-lg font-bold text-[#0B2345] dark:text-white" data-i18n="srv4_title">Marketpleysga Yetkazish</h3>
+              <p class="text-xs sm:text-sm text-[#475A78] dark:text-slate-400 leading-relaxed" data-i18n="srv4_desc">
+                Tayyor partiyalarni korobka yoki palletda Uzum, Wildberries, Yandex va Ozon omborlariga rasmiy hujjat bilan topshirish.
+              </p>
+            </div>
+            <a href="#contact" class="text-xs font-bold text-[#2563EB] hover:underline inline-flex items-center gap-1" data-i18n="cta_order_arrow">Buyurtma beriş →</a>
+          </div>
+
+        </div>
+
+        <!-- Right: 3D Isometric Fulfillment Warehouse Visual Card (5 cols, matched height) -->
+        <div class="lg:col-span-5 flex">
+          <div class="floating-card p-2 sm:p-3 w-full h-full flex items-center justify-center overflow-hidden bg-[#F6FAFF] dark:bg-[#0F1D36] group">
+            <img
+              src="rasm-xizmatlar.png"
+              onerror="this.onerror=null; this.src='rasm3.png';"
+              alt="MegaFulfilment — 360 Fulfillment Markazi" data-i18n-alt="alt_center"
+              class="w-full h-full object-contain rounded-2xl group-hover:scale-[1.02] transition duration-500"
+            >
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NARXLAR KALKULYATORI (EXACT BARAKA 1:1) ================= -->
+  <section id="calculator" class="py-20 border-t border-[#D6E3F6] dark:border-[#233652]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Left-Aligned Section Heading (1:1 Baraka Layout) -->
+      <div class="max-w-2xl mb-10 space-y-3 reveal-up">
+        <div class="badge-pill" data-i18n="calc_badge">NARXLAR KALKULYATORI</div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-[#0B2345] dark:text-white font-sans tracking-tight">
+          <span class="font-serif italic text-[#2563EB] dark:text-[#60A5FA]" data-i18n="calc_title_1">Aniq narx</span>
+          <span data-i18n="calc_title_2">— hisoblang</span>
+        </h2>
+        <p class="text-[#475A78] dark:text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="calc_desc">
+          Mahsulot sonini kiriting va kerakli xizmatlarni tanlang — biz darhol jami summani kõrsatamiz.
+        </p>
+      </div>
+
+      <div class="text-xs font-extrabold uppercase tracking-wider text-[#475A78] dark:text-slate-400 mb-3.5 reveal-up" data-i18n="calc_tiers_heading">
+        TOVAR ÕLÇAMI BÕYIÇA NARX
+      </div>
+
+      <!-- Calculator Main Window: Left 2x3 Grid + Litr Banner (8 cols) | Right Contained Summary Box (4 cols) -->
+      <div class="grid lg:grid-cols-12 gap-8 items-start reveal-up">
+        
+        <!-- Left: 6 Size Tiers in 2-Column Grid + Bottom Litr Banner (8 cols) -->
+        <div class="lg:col-span-8 space-y-4">
+          
+          <div class="grid sm:grid-cols-2 gap-3.5">
+            
+            <!-- Tier 1: 600 so'm -->
+            <div id="tier-card-t1" class="tier-card p-4 sm:p-5">
+              <label class="flex items-start gap-3.5 cursor-pointer select-none">
+                <input type="checkbox" id="tier-chk-t1" onchange="toggleTierCard('t1')" class="mt-1 w-5 h-5 rounded-md border-[#C0D1EC] accent-[#2563EB] shrink-0 cursor-pointer">
+                <div class="space-y-1 flex-1">
+                  <div class="text-sm font-bold text-[#0B2345] dark:text-white leading-snug" data-i18n="tier1_name">Õlçami õta mayda tovarlar</div>
+                  <div class="text-xs text-[#5B6D8A] dark:text-slate-400 leading-relaxed" data-i18n="tier1_sub">zargarlik buyumlari, aksessuarlar va h.k.</div>
+                  <div class="text-xs font-extrabold text-[#2563EB] pt-0.5" data-i18n="tier1_rate">600 sõm / dona</div>
+                </div>
+              </label>
+              <div id="tier-box-t1" class="hidden mt-3.5 pt-3 border-t border-[#DAE6F8] dark:border-[#233652] flex items-center justify-between gap-2">
+                <span class="text-xs font-semibold text-[#475A78] dark:text-slate-300" data-i18n="calc_qty_label">Tovar soni (dona):</span>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" onclick="changeTierQty('t1', -50)" class="step-btn">−</button>
+                  <input type="number" id="tier-qty-t1" value="0" min="0" step="10" oninput="calcMega()" class="w-20 px-2 py-1 text-center rounded-xl border border-[#CDDBF0] dark:border-slate-700 bg-white dark:bg-[#081326] text-sm font-bold">
+                  <button type="button" onclick="changeTierQty('t1', 50)" class="step-btn">+</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tier 2: 1 000 so'm -->
+            <div id="tier-card-t2" class="tier-card p-4 sm:p-5">
+              <label class="flex items-start gap-3.5 cursor-pointer select-none">
+                <input type="checkbox" id="tier-chk-t2" onchange="toggleTierCard('t2')" class="mt-1 w-5 h-5 rounded-md border-[#C0D1EC] accent-[#2563EB] shrink-0 cursor-pointer">
+                <div class="space-y-1 flex-1">
+                  <div class="text-sm font-bold text-[#0B2345] dark:text-white leading-snug" data-i18n="tier2_name">Õrta õlçamga yaqin tovarlar</div>
+                  <div class="text-xs text-[#5B6D8A] dark:text-slate-400 leading-relaxed" data-i18n="tier2_sub">fonarlar, quloqçinlar, paypoqlar va h.k.</div>
+                  <div class="text-xs font-extrabold text-[#2563EB] pt-0.5" data-i18n="tier2_rate">1 000 sõm / dona</div>
+                </div>
+              </label>
+              <div id="tier-box-t2" class="hidden mt-3.5 pt-3 border-t border-[#DAE6F8] dark:border-[#233652] flex items-center justify-between gap-2">
+                <span class="text-xs font-semibold text-[#475A78] dark:text-slate-300" data-i18n="calc_qty_label">Tovar soni (dona):</span>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" onclick="changeTierQty('t2', -50)" class="step-btn">−</button>
+                  <input type="number" id="tier-qty-t2" value="0" min="0" step="10" oninput="calcMega()" class="w-20 px-2 py-1 text-center rounded-xl border border-[#CDDBF0] dark:border-slate-700 bg-white dark:bg-[#081326] text-sm font-bold">
+                  <button type="button" onclick="changeTierQty('t2', 50)" class="step-btn">+</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tier 3: 1 300 so'm -->
+            <div id="tier-card-t3" class="tier-card p-4 sm:p-5">
+              <label class="flex items-start gap-3.5 cursor-pointer select-none">
+                <input type="checkbox" id="tier-chk-t3" onchange="toggleTierCard('t3')" class="mt-1 w-5 h-5 rounded-md border-[#C0D1EC] accent-[#2563EB] shrink-0 cursor-pointer">
+                <div class="space-y-1 flex-1">
+                  <div class="text-sm font-bold text-[#0B2345] dark:text-white leading-snug" data-i18n="tier3_name">Õrta õlçamli tovarlar</div>
+                  <div class="text-xs text-[#5B6D8A] dark:text-slate-400 leading-relaxed" data-i18n="tier3_sub">kiyim-keçaklar, oyoq-kiyimlar va h.k.</div>
+                  <div class="text-xs font-extrabold text-[#2563EB] pt-0.5" data-i18n="tier3_rate">1 300 sõm / dona</div>
+                </div>
+              </label>
+              <div id="tier-box-t3" class="hidden mt-3.5 pt-3 border-t border-[#DAE6F8] dark:border-[#233652] flex items-center justify-between gap-2">
+                <span class="text-xs font-semibold text-[#475A78] dark:text-slate-300" data-i18n="calc_qty_label">Tovar soni (dona):</span>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" onclick="changeTierQty('t3', -50)" class="step-btn">−</button>
+                  <input type="number" id="tier-qty-t3" value="0" min="0" step="10" oninput="calcMega()" class="w-20 px-2 py-1 text-center rounded-xl border border-[#CDDBF0] dark:border-slate-700 bg-white dark:bg-[#081326] text-sm font-bold">
+                  <button type="button" onclick="changeTierQty('t3', 50)" class="step-btn">+</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tier 4: 3 000 so'm -->
+            <div id="tier-card-t4" class="tier-card p-4 sm:p-5">
+              <label class="flex items-start gap-3.5 cursor-pointer select-none">
+                <input type="checkbox" id="tier-chk-t4" onchange="toggleTierCard('t4')" class="mt-1 w-5 h-5 rounded-md border-[#C0D1EC] accent-[#2563EB] shrink-0 cursor-pointer">
+                <div class="space-y-1 flex-1">
+                  <div class="text-sm font-bold text-[#0B2345] dark:text-white leading-snug" data-i18n="tier4_name">Õrtadan yirik õlçamli va nisbatan oğir tovarlar</div>
+                  <div class="text-xs text-[#5B6D8A] dark:text-slate-400 leading-relaxed" data-i18n="tier4_sub">içimliklar, gellar, kitoblar va h.k.</div>
+                  <div class="text-xs font-extrabold text-[#2563EB] pt-0.5" data-i18n="tier4_rate">3 000 sõm / dona</div>
+                </div>
+              </label>
+              <div id="tier-box-t4" class="hidden mt-3.5 pt-3 border-t border-[#DAE6F8] dark:border-[#233652] flex items-center justify-between gap-2">
+                <span class="text-xs font-semibold text-[#475A78] dark:text-slate-300" data-i18n="calc_qty_label">Tovar soni (dona):</span>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" onclick="changeTierQty('t4', -20)" class="step-btn">−</button>
+                  <input type="number" id="tier-qty-t4" value="0" min="0" step="10" oninput="calcMega()" class="w-20 px-2 py-1 text-center rounded-xl border border-[#CDDBF0] dark:border-slate-700 bg-white dark:bg-[#081326] text-sm font-bold">
+                  <button type="button" onclick="changeTierQty('t4', 20)" class="step-btn">+</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tier 5: 6 000 so'm -->
+            <div id="tier-card-t5" class="tier-card p-4 sm:p-5">
+              <label class="flex items-start gap-3.5 cursor-pointer select-none">
+                <input type="checkbox" id="tier-chk-t5" onchange="toggleTierCard('t5')" class="mt-1 w-5 h-5 rounded-md border-[#C0D1EC] accent-[#2563EB] shrink-0 cursor-pointer">
+                <div class="space-y-1 flex-1">
+                  <div class="text-sm font-bold text-[#0B2345] dark:text-white leading-snug" data-i18n="tier5_name">Yirik õlçamga yaqin va nisbatan oğir tovarlar</div>
+                  <div class="text-xs text-[#5B6D8A] dark:text-slate-400 leading-relaxed" data-i18n="tier5_sub">pilesoslar, monitorlar va h.k.</div>
+                  <div class="text-xs font-extrabold text-[#2563EB] pt-0.5" data-i18n="tier5_rate">6 000 sõm / dona</div>
+                </div>
+              </label>
+              <div id="tier-box-t5" class="hidden mt-3.5 pt-3 border-t border-[#DAE6F8] dark:border-[#233652] flex items-center justify-between gap-2">
+                <span class="text-xs font-semibold text-[#475A78] dark:text-slate-300" data-i18n="calc_qty_label">Tovar soni (dona):</span>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" onclick="changeTierQty('t5', -5)" class="step-btn">−</button>
+                  <input type="number" id="tier-qty-t5" value="0" min="0" step="5" oninput="calcMega()" class="w-20 px-2 py-1 text-center rounded-xl border border-[#CDDBF0] dark:border-slate-700 bg-white dark:bg-[#081326] text-sm font-bold">
+                  <button type="button" onclick="changeTierQty('t5', 5)" class="step-btn">+</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tier 6: 50 000 so'm -->
+            <div id="tier-card-t6" class="tier-card p-4 sm:p-5">
+              <label class="flex items-start gap-3.5 cursor-pointer select-none">
+                <input type="checkbox" id="tier-chk-t6" onchange="toggleTierCard('t6')" class="mt-1 w-5 h-5 rounded-md border-[#C0D1EC] accent-[#2563EB] shrink-0 cursor-pointer">
+                <div class="space-y-1 flex-1">
+                  <div class="text-sm font-bold text-[#0B2345] dark:text-white leading-snug" data-i18n="tier6_name">Yirik õlçamli tovarlar</div>
+                  <div class="text-xs text-[#5B6D8A] dark:text-slate-400 leading-relaxed" data-i18n="tier6_sub">muzlatgiçlar, konditsionerlar va h.k.</div>
+                  <div class="text-xs font-extrabold text-[#2563EB] pt-0.5" data-i18n="tier6_rate">50 000 sõm / dona</div>
+                </div>
+              </label>
+              <div id="tier-box-t6" class="hidden mt-3.5 pt-3 border-t border-[#DAE6F8] dark:border-[#233652] flex items-center justify-between gap-2">
+                <span class="text-xs font-semibold text-[#475A78] dark:text-slate-300" data-i18n="calc_qty_label">Tovar soni (dona):</span>
+                <div class="flex items-center gap-1.5">
+                  <button type="button" onclick="changeTierQty('t6', -1)" class="step-btn">−</button>
+                  <input type="number" id="tier-qty-t6" value="0" min="0" step="1" oninput="calcMega()" class="w-20 px-2 py-1 text-center rounded-xl border border-[#CDDBF0] dark:border-slate-700 bg-white dark:bg-[#081326] text-sm font-bold">
+                  <button type="button" onclick="changeTierQty('t6', 1)" class="step-btn">+</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Optional Add-ons (Shown when any tier is active) -->
+          <div id="calc-addons-panel" class="hidden tier-card p-4 space-y-2.5">
+            <div class="text-xs font-bold text-[#0B2345] dark:text-white" data-i18n="calc_addons_heading">Qõşimça xizmatlar (ixtiyoriy):</div>
+            <div class="grid sm:grid-cols-2 gap-2.5 text-xs font-semibold">
+              <label class="flex items-center gap-2 p-2 rounded-xl bg-[#F2F7FF] dark:bg-[#16274A] cursor-pointer hover:border-[#2563EB] border border-transparent">
+                <input type="checkbox" id="addon-zip" onchange="calcMega()" class="w-4 h-4 accent-[#2563EB]">
+                <span data-i18n="addon_zip">Zip-lock / BOPP paket (+500 sõm)</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded-xl bg-[#F2F7FF] dark:bg-[#16274A] cursor-pointer hover:border-[#2563EB] border border-transparent">
+                <input type="checkbox" id="addon-bubble" onchange="calcMega()" class="w-4 h-4 accent-[#2563EB]">
+                <span data-i18n="addon_bubble">Pupirka / streç (+700 sõm)</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded-xl bg-[#F2F7FF] dark:bg-[#16274A] cursor-pointer hover:border-[#2563EB] border border-transparent">
+                <input type="checkbox" id="addon-box" onchange="calcMega()" class="w-4 h-4 accent-[#2563EB]">
+                <span data-i18n="addon_box">Korobka 60x40x40 (+12 000 sõm)</span>
+              </label>
+              <label class="flex items-center gap-2 p-2 rounded-xl bg-[#F2F7FF] dark:bg-[#16274A] cursor-pointer hover:border-[#2563EB] border border-transparent">
+                <input type="checkbox" id="addon-delivery" onchange="calcMega()" class="w-4 h-4 accent-[#2563EB]">
+                <span data-i18n="addon_delivery">FBO omborga reys (+80 000 sõm)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Volume (Litr) Banner Card (Exact 1:1 Baraka Gold Banner -> kalkulyator.html) -->
+          <a href="kalkulyator.html" class="p-4 sm:p-5 rounded-2xl bg-[#EDF4FF] dark:bg-[#122240] border border-[#A7C5F5] dark:border-[#2C4264] flex items-center justify-between gap-4 cursor-pointer hover:border-[#2563EB] hover:shadow-md transition">
+            <div class="flex items-center gap-4">
+              <span class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#60A5FA] to-[#2563EB] text-white flex items-center justify-center shrink-0 shadow-sm">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                </svg>
+              </span>
+              <div>
+                <div class="text-sm sm:text-base font-extrabold font-serif text-[#0B2345] dark:text-white" data-i18n="calc_litr_banner">Narxni tõliq şaklda litrda hisoblaş</div>
+                <div class="text-xs text-[#5B6D8A] dark:text-slate-400 mt-0.5" data-i18n="calc_litr_sub">Tovar õlçami va soniga qarab: asosiy xizmat, ştrix kod, markirovka, bop paket va streç</div>
+              </div>
+            </div>
+            <span class="text-lg font-bold text-[#2563EB] shrink-0">→</span>
+          </a>
+
+        </div>
+
+        <!-- Right: Exact Dark Navy Summary Card (4 cols, Contained Inside Calculator Window) -->
+        <div class="lg:col-span-4 w-full">
+          <div class="bg-[#0B2345] text-white rounded-3xl p-6 sm:p-7 shadow-2xl space-y-5 border border-[#233652]">
+            
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-widest text-slate-400" data-i18n="calc_summary_title">JAMI</span>
+              <span id="sum-items-count" class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-white/10 text-slate-300">0 dona</span>
+            </div>
+
+            <div>
+              <div id="baraka-total" class="text-3xl sm:text-4xl font-extrabold text-[#60A5FA] font-serif leading-none">
+                0 sõm
+              </div>
+              <div class="text-xs text-slate-400 mt-2.5">
+                <span data-i18n="calc_avg_item">Õrtaça 1 dona uçun:</span>
+                <span id="avg-per-item" class="text-slate-300 font-semibold">0 sõm</span>
+              </div>
+            </div>
+
+            <div class="border-t border-[#233652] pt-5 space-y-3">
+              <button type="button" onclick="applyQuoteToForm()" class="w-full primary-gradient-btn rounded-xl py-3.5 flex items-center justify-center gap-2 text-sm shadow-lg text-[#0B2345]">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+                <span data-i18n="calc_btn_order">Boğlaniş</span>
+              </button>
+
+              <a href="kalkulyator.html" class="block w-full text-center text-xs font-bold text-[#60A5FA] hover:underline pt-1" data-i18n="calc_btn_litr">
+                Batafsil litrda hisoblaş ↗
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Saqlash VA TOVARLAR HISOBI ================= -->
+  <section id="storage" class="py-20 border-t border-[#D6E3F6] dark:border-[#233652]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12 space-y-3 reveal-up">
+        <div class="badge-pill" data-i18n="st_badge">Saqlash VA TOVARLAR HISOBI</div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0B2345] dark:text-white font-sans">
+          <span class="font-serif italic text-[#2563EB] dark:text-[#60A5FA]" data-i18n="st_title_1">45 kun bepul saqlash</span>
+          <span data-i18n="st_title_2">va 100% shaffof nazorat</span>
+        </h2>
+        <p class="text-[#475A78] dark:text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="st_desc">
+          Tovarlaringiz omborga qabul qilingan kundan boshlab 45 kun davomida mutlaqo bepul saqlanadi. Har bir kirim-chiqim, qadoqlangan partiya va qoldiqlar haqida MegaBOT hamda Google Sheets orqali soniyasigacha aniq ma'lumot olasiz.
+        </p>
+      </div>
+
+      <!-- Feature Badges -->
+      <div class="flex flex-wrap items-center justify-center gap-4 mb-12 text-xs sm:text-sm font-bold text-[#0B2345] dark:text-white reveal-up">
+        <div class="bg-white dark:bg-[#0F1D36] border border-[#D6E3F6] dark:border-[#2C4264] px-4 py-2 rounded-full shadow-sm" data-i18n="st_pill1">✓ Real-vaqtda ombor qoldig'i</div>
+        <div class="bg-white dark:bg-[#0F1D36] border border-[#D6E3F6] dark:border-[#2C4264] px-4 py-2 rounded-full shadow-sm" data-i18n="st_pill2">✓ @megaffuz Telegram Bot bildirishnomasi</div>
+        <div class="bg-white dark:bg-[#0F1D36] border border-[#D6E3F6] dark:border-[#2C4264] px-4 py-2 rounded-full shadow-sm" data-i18n="st_pill3">✓ Avtomatik Google Sheets jadvali</div>
+        <div class="bg-white dark:bg-[#0F1D36] border border-[#D6E3F6] dark:border-[#2C4264] px-4 py-2 rounded-full shadow-sm" data-i18n="st_pill4">✓ 24/7 Video-hisobot</div>
+        <div class="w-full text-center text-xs text-[#475A78] dark:text-slate-400 pt-1" data-i18n="after45_note">45 kundan keyin saqlaş narxi şartnomada aniq yoziladi — smeta sõrovida menejer aytib beradi.</div>
+      </div>
+
+      <!-- Dual Preview Widget (MegaBOT + Google Sheets) -->
+      <div class="grid md:grid-cols-2 gap-8 items-stretch reveal-up">
+        
+        <!-- Telegram Bot Image (rasmbot) -->
+        <div class="flex items-center justify-center relative group">
+          <img src="rasmbot.png" onerror="this.onerror=null; this.src='rasmbot.jpg';" alt="MegaffBOT — Avtomatlashgan Ombor Hisoboti" data-i18n-alt="alt_bot" class="w-full h-full max-h-[380px] object-contain rounded-2xl shadow-lg drop-shadow-md group-hover:scale-[1.02] transition duration-500">
+        </div>
+
+        <!-- Google Sheets Widget -->
+        <div class="floating-card p-6 bg-white dark:bg-[#0F1D36] space-y-4">
+          <div class="flex items-center justify-between border-b border-[#DAE6F8] dark:border-[#233652] pb-3">
+            <div class="flex items-center gap-2.5">
+              <span class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+              </span>
+              <span class="text-sm font-bold text-[#0B2345] dark:text-white" data-i18n="sheet_title">Google Sheets — Jonli Ombor Qoldiği</span>
+            </div>
+            <span class="text-xs text-emerald-600 font-bold" data-i18n="sheet_badge">Avto-sinxronizatsiya</span>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead class="bg-[#F2F7FF] dark:bg-[#172947] text-[#475A78] dark:text-slate-300 font-bold">
+                <tr>
+                  <th class="p-2.5" data-i18n="sheet_col1">Tovar artikuli / Nomi</th>
+                  <th class="p-2.5" data-i18n="sheet_col2">Marketpleys</th>
+                  <th class="p-2.5" data-i18n="sheet_col3">Omborda qoldiq</th>
+                  <th class="p-2.5" data-i18n="sheet_col4">Bepul Saqlash</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-[#DAE6F8] dark:divide-[#233652] text-[#0B2345] dark:text-slate-200">
+                <tr>
+                  <td class="p-2.5 font-semibold">Smart Watch Z8 Ultra</td>
+                  <td class="p-2.5"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-purple-500/10 text-purple-600 font-bold"><img src="assets/icon-uzum.png" alt="Uzum" class="w-4 h-4 rounded-sm object-contain">Uzum</span></td>
+                  <td class="p-2.5 font-bold">320</td>
+                  <td class="p-2.5 text-emerald-600 font-bold">41 / 45</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-semibold" data-i18n="demo_prod_shoes">Krossovka Air Sport</td>
+                  <td class="p-2.5"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-fuchsia-500/10 text-fuchsia-600 font-bold"><img src="assets/icon-wb.png" alt="WB" class="w-4 h-4 rounded-sm object-contain">Wildberries</span></td>
+                  <td class="p-2.5 font-bold">180</td>
+                  <td class="p-2.5 text-emerald-600 font-bold">36 / 45</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-semibold" data-i18n="demo_prod_holder">Avto-uşlagiç MagSafe</td>
+                  <td class="p-2.5"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-amber-500/15 text-amber-700 font-bold"><img src="assets/icon-yandex.png" alt="Yandex" class="w-4 h-4 rounded-sm object-contain">Yandex</span></td>
+                  <td class="p-2.5 font-bold">540</td>
+                  <td class="p-2.5 text-emerald-600 font-bold">44 / 45</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-semibold" data-i18n="demo_prod_kitchen">Oşxona organayzeri</td>
+                  <td class="p-2.5"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-blue-500/10 text-blue-600 font-bold"><img src="assets/icon-ozon.png" alt="Ozon" class="w-4 h-4 rounded-sm object-contain">Ozon</span></td>
+                  <td class="p-2.5 font-bold">290</td>
+                  <td class="p-2.5 text-emerald-600 font-bold">45 / 45</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BIZNING JAMOA ================= -->
+ <!--  <section id="team" class="py-20 border-t border-[#D6E3F6] dark:border-[#233652]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3 reveal-up">
+        <div class="badge-pill" data-i18n="team_badge">BIZNING JAMOA</div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0B2345] dark:text-white font-sans" data-i18n="team_title">Tajribali mutaxassislar jamoasi</h2>
+        <p class="text-[#475A78] dark:text-slate-300 text-sm sm:text-base" data-i18n="team_sub">Har bir buyurtma va qadoqlangan mahsulot ortida o'z ishining ustalari turadi.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal-up">
+        <div class="floating-card p-6 text-center space-y-3">
+          <div class="w-20 h-20 mx-auto rounded-full bg-[#E4EEFD] dark:bg-[#1A2D4D] border-2 border-[#2563EB] flex items-center justify-center text-xl font-bold font-serif text-[#2563EB]">SK</div>
+          <div>
+            <h3 class="text-base font-bold text-[#0B2345] dark:text-white">Sardor Keldimurodov</h3>
+            <p class="text-[11px] font-bold uppercase tracking-wider text-[#2563EB] mt-1" data-i18n="team1_role">HAMMUASSIS VA RAHBAR</p>
+          </div>
+        </div>
+
+        <div class="floating-card p-6 text-center space-y-3">
+          <div class="w-20 h-20 mx-auto rounded-full bg-[#E4EEFD] dark:bg-[#1A2D4D] border-2 border-[#2563EB] flex items-center justify-center text-xl font-bold font-serif text-[#2563EB]">MM</div>
+          <div>
+            <h3 class="text-base font-bold text-[#0B2345] dark:text-white">Murodjon Muhammadiyev</h3>
+            <p class="text-[11px] font-bold uppercase tracking-wider text-[#2563EB] mt-1" data-i18n="team2_role">BOSH OMBOR BOSHQARUVCHISI</p>
+          </div>
+        </div>
+
+        <div class="floating-card p-6 text-center space-y-3">
+          <div class="w-20 h-20 mx-auto rounded-full bg-[#E4EEFD] dark:bg-[#1A2D4D] border-2 border-[#2563EB] flex items-center justify-center text-xl font-bold font-serif text-[#2563EB]">IB</div>
+          <div>
+            <h3 class="text-base font-bold text-[#0B2345] dark:text-white">Islom Bahromov</h3>
+            <p class="text-[11px] font-bold uppercase tracking-wider text-[#2563EB] mt-1" data-i18n="team3_role">SIFAT NAZORATI BO'LIMI</p>
+          </div>
+        </div>
+
+        <div class="floating-card p-6 text-center space-y-3">
+          <div class="w-20 h-20 mx-auto rounded-full bg-[#E4EEFD] dark:bg-[#1A2D4D] border-2 border-[#2563EB] flex items-center justify-center text-xl font-bold font-serif text-[#2563EB]">ET</div>
+          <div>
+            <h3 class="text-base font-bold text-[#0B2345] dark:text-white">Elyorbek Temerov</h3>
+            <p class="text-[11px] font-bold uppercase tracking-wider text-[#2563EB] mt-1" data-i18n="team4_role">MIJOZLAR BILAN ISHLASH (VIP)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ================= BIZNING HAMKORLAR (MARKETPLACES) ================= -->
+  <section id="partners" class="py-20 border-t border-[#D6E3F6] dark:border-[#233652]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3 reveal-up">
+        <div class="badge-pill" data-i18n="part_badge">BIZNING HAMKORLAR</div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0B2345] dark:text-white font-sans">
+          <span class="font-serif italic text-[#2563EB] dark:text-[#60A5FA]" data-i18n="part_title_1">Eng yirik</span>
+          <span data-i18n="part_title_2">marketpleyslar bilan integratsiya</span>
+        </h2>
+        <p class="text-[#475A78] dark:text-slate-300 text-sm sm:text-base" data-i18n="part_sub">
+          Tovarlaringiz O'zbekiston va MDHning yetakchi savdo platformalariga barcha reglamentlarga mos holda yetkaziladi.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto reveal-up">
+        <div class="floating-card p-6 sm:p-7 space-y-4">
+          <div class="flex items-center gap-3.5">
+            <img src="assets/icon-uzum.png" alt="Uzum Market" class="w-12 h-12 rounded-xl object-contain shadow-sm shrink-0">
+            <div>
+              <h3 class="text-base font-bold text-[#0B2345] dark:text-white">Uzum Market</h3>
+              <p class="text-xs text-[#2563EB] font-semibold" data-i18n="part_uzum_tag">Õzbekiston #1 Marketplace</p>
+            </div>
+          </div>
+          <ul class="text-xs text-[#475A78] dark:text-slate-400 space-y-2 pt-2 border-t border-[#DAE6F8] dark:border-[#233652]">
+            <li>✓ <span data-i18n="part_uzum_1">FBO Xonobod omboriga har kuni yetkaziş</span></li>
+            <li>✓ <span data-i18n="part_uzum_2">Korobka va pallet bilan navbatsiz topşiriş</span></li>
+            <li>✓ <span data-i18n="part_uzum_3">58x40 termo-etiketka va ştrix-kod</span></li>
+          </ul>
+        </div>
+
+        <div class="floating-card p-6 sm:p-7 space-y-4">
+          <div class="flex items-center gap-3.5">
+            <img src="assets/icon-yandex.png" alt="Yandex Market" class="w-12 h-12 rounded-xl object-contain shadow-sm shrink-0">
+            <div>
+              <h3 class="text-base font-bold text-[#0B2345] dark:text-white">Yandex Market</h3>
+              <p class="text-xs text-[#2563EB] font-semibold" data-i18n="part_yandex_tag">FBY / FBS Logistika</p>
+            </div>
+          </div>
+          <ul class="text-xs text-[#475A78] dark:text-slate-400 space-y-2 pt-2 border-t border-[#DAE6F8] dark:border-[#233652]">
+            <li>✓ <span data-i18n="part_yandex_1">Yandex standartiga 100% mos qadoqlaş</span></li>
+            <li>✓ <span data-i18n="part_yandex_2">Toşkent qabul punktlariga tezkor topşiriş</span></li>
+            <li>✓ <span data-i18n="part_yandex_3">Real-vaqtda qoldiqlar sinxronizatsiyasi</span></li>
+          </ul>
+        </div>
+
+        <div class="floating-card p-6 sm:p-7 space-y-4">
+          <div class="flex items-center gap-3.5">
+            <img src="assets/icon-wb.png" alt="Wildberries" class="w-12 h-12 rounded-xl object-contain shadow-sm shrink-0">
+            <div>
+              <h3 class="text-base font-bold text-[#0B2345] dark:text-white">Wildberries</h3>
+              <p class="text-xs text-[#2563EB] font-semibold" data-i18n="part_wb_tag">MDH Eng Yirik Platformasi</p>
+            </div>
+          </div>
+          <ul class="text-xs text-[#475A78] dark:text-slate-400 space-y-2 pt-2 border-t border-[#DAE6F8] dark:border-[#233652]">
+            <li>✓ <span data-i18n="part_wb_1">Kiyim, poyabzal va tekstil uçun maxsus qadoq</span></li>
+            <li>✓ <span data-i18n="part_wb_2">KIZ / Çestniy Znak va EAC markirovkasi</span></li>
+            <li>✓ <span data-i18n="part_wb_3">FBO va FBS partiyalarni tayyorlaş</span></li>
+          </ul>
+        </div>
+
+        <div class="floating-card p-6 sm:p-7 space-y-4">
+          <div class="flex items-center gap-3.5">
+            <img src="assets/icon-ozon.png" alt="Ozon" class="w-12 h-12 rounded-xl object-contain shadow-sm shrink-0">
+            <div>
+              <h3 class="text-base font-bold text-[#0B2345] dark:text-white">Ozon</h3>
+              <p class="text-xs text-[#2563EB] font-semibold" data-i18n="part_ozon_tag">Õzbekiston & MDH</p>
+            </div>
+          </div>
+          <ul class="text-xs text-[#475A78] dark:text-slate-400 space-y-2 pt-2 border-t border-[#DAE6F8] dark:border-[#233652]">
+            <li>✓ <span data-i18n="part_ozon_1">Xavfsiz 3/5 qavatli korobka va pupirka</span></li>
+            <li>✓ <span data-i18n="part_ozon_2">Ştrix-kodlaş va komplektatsiya</span></li>
+            <li>✓ <span data-i18n="part_ozon_3">Ozon qabul omborlariga yetkaziş</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MIJOZLAR FIKRI (REVIEWS) ================= -->
+  <section id="reviews" class="py-20 border-t border-[#D6E3F6] dark:border-[#233652]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3 reveal-up">
+        <div class="badge-pill" data-i18n="rev_badge">MIJOZLAR FIKRI</div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0B2345] dark:text-white font-sans">
+          <span data-i18n="rev_title_1">Bizga</span>
+          <span class="font-serif italic text-[#2563EB] dark:text-[#60A5FA]" data-i18n="rev_title_2">ishongan sellerlar fikri</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 reveal-up">
+        <div class="floating-card p-6 flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="text-amber-500 text-sm tracking-widest">★★★★★</div>
+            <p class="text-xs sm:text-sm text-[#475A78] dark:text-slate-300 italic leading-relaxed" data-i18n="rev1_text">
+              «Tovarlarim Tashkent Index'dagi MegaFulfilment omboriga yetib borishi bilan 24 soat ichida qadoqlanib, Uzum Market Xonobod omboriga topshiriladi. Tezlik va javobgarlik a'lo darajada!»
+            </p>
+          </div>
+          <div class="pt-3 border-t border-[#DAE6F8] dark:border-[#233652] text-xs font-bold text-[#2563EB]" data-i18n="rev1_author">
+            Farhod · «Avtocomfort» do'koni asoschisi
+          </div>
+        </div>
+
+        <div class="floating-card p-6 flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="text-amber-500 text-sm tracking-widest">★★★★★</div>
+            <p class="text-xs sm:text-sm text-[#475A78] dark:text-slate-300 italic leading-relaxed" data-i18n="rev2_text">
+              «Xitoydan katta partiyada tovar olib kelamiz. MegaFulfilment barcha braklarni saralab, Google Sheets va MegaBOT orqali har bir donaning hisobini aniq yuritadi. 45 kunlik bepul saqlash esa juda katta foyda!»
+            </p>
+          </div>
+          <div class="pt-3 border-t border-[#DAE6F8] dark:border-[#233652] text-xs font-bold text-[#2563EB]" data-i18n="rev2_author">
+            Bekzod · «Beka Sport» va «Beka Accessoires» asoschisi
+          </div>
+        </div>
+
+        <div class="floating-card p-6 flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="text-amber-500 text-sm tracking-widest">★★★★★</div>
+            <p class="text-xs sm:text-sm text-[#475A78] dark:text-slate-300 italic leading-relaxed" data-i18n="rev3_text">
+              «Avval o'zimiz uyda qadoqlab, ko'p vaqt va asab yo'qotardik. MegaFulfilment'ga o'tgach, savdomiz 2.5 barobarga oshdi, chunki bor e'tiborimizni faqat reklama va yangi tovarlarga qaratdik!»
+            </p>
+          </div>
+          <div class="pt-3 border-t border-[#DAE6F8] dark:border-[#233652] text-xs font-bold text-[#2563EB]" data-i18n="rev3_author">
+            Laziz · «Viqor Boutique» do'koni asoschisi
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ (SAVOL-JAVOB) ================= -->
+  <section id="faq" class="py-20 border-t border-[#D6E3F6] dark:border-[#233652]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 space-y-3 reveal-up">
+        <div class="badge-pill" data-i18n="faq_badge">KO'P BERILADIGAN SAVOLLAR</div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0B2345] dark:text-white font-sans" data-i18n="faq_title">Savollaringizga aniq javoblar</h2>
+      </div>
+
+      <div class="space-y-3.5 reveal-up">
+        <div class="faq-item floating-card overflow-hidden">
+          <button type="button" onclick="toggleFaq(this)" class="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-[#0B2345] dark:text-white">
+            <span data-i18n="faq1_q">1. Tovarlarni qabul qilish va topshirish qancha vaqt oladi?</span>
+            <span class="faq-icon text-[#2563EB] transition-transform duration-200" style="transform: rotate(180deg);">▼</span>
+          </button>
+          <div class="faq-body px-5 pb-5 text-xs sm:text-sm text-[#475A78] dark:text-slate-300 leading-relaxed" data-i18n="faq1_a">
+            Tovaringiz Tashkent Index'dagi omborimizga kelib tushgan zahoti qabul qilinadi va 24–48 soat ichida to'liq tekshirilib, qadoqlanib, shtrix-kodlanib, tanlangan marketpleys (Uzum, WB, Yandex, Ozon) omboriga topshiriladi.
+          </div>
+        </div>
+
+        <div class="faq-item floating-card overflow-hidden">
+          <button type="button" onclick="toggleFaq(this)" class="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-[#0B2345] dark:text-white">
+            <span data-i18n="faq2_q">2. 45 kun bepul saqlaş qanday işlaydi?</span>
+            <span class="faq-icon text-[#2563EB] transition-transform duration-200">▼</span>
+          </button>
+          <div class="faq-body hidden px-5 pb-5 text-xs sm:text-sm text-[#475A78] dark:text-slate-300 leading-relaxed" data-i18n="faq2_a">
+            Biz bilan hamkorlik qiluvchi har bir sotuvchi uchun tovarlar omborga kiritilgan kundan boshlab 45 kalendar kun davomida saqlash uchun 0 so'm to'lanadi. Qoldiqlarni va bepul kunlar hisobini MegaBOT hamda Google Sheets orqali 24/7 kuzatib borasiz.
+          </div>
+        </div>
+
+        <div class="faq-item floating-card overflow-hidden">
+          <button type="button" onclick="toggleFaq(this)" class="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-[#0B2345] dark:text-white">
+            <span data-i18n="faq3_q">3. Xitoydan (kargo orqali) kelgan tovarlarni to'g'ridan-to'g'ri qabul qilasizmi?</span>
+            <span class="faq-icon text-[#2563EB] transition-transform duration-200">▼</span>
+          </button>
+          <div class="faq-body hidden px-5 pb-5 text-xs sm:text-sm text-[#475A78] dark:text-slate-300 leading-relaxed" data-i18n="faq3_a">
+            Ha! Bizning omborimiz Toshkentdagi eng qulay logistika xabi — Tashkent Index (Sergeli/Yangihayot, Sofdil ko'chasi) hududida joylashgan. Kargo mashinalari tovarni to'g'ridan-to'g'ri bizning omborga tushirishi mumkin, biz o'zimiz sanab va video-hisobot bilan qabul qilib olamiz.
+          </div>
+        </div>
+
+        <div class="faq-item floating-card overflow-hidden">
+          <button type="button" onclick="toggleFaq(this)" class="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-[#0B2345] dark:text-white">
+            <span data-i18n="faq4_q">4. Tovar yo'qolsa yoki qadoqlashda xato ketib qaytarilsa kim javob beradi?</span>
+            <span class="faq-icon text-[#2563EB] transition-transform duration-200">▼</span>
+          </button>
+          <div class="faq-body hidden px-5 pb-5 text-xs sm:text-sm text-[#475A78] dark:text-slate-300 leading-relaxed" data-i18n="faq4_a">
+            Rasmiy shartnoma asosida MegaFulfilment ombordagi har bir tovar uchun 100% moddiy javobgarlikni o'z zimmasiga oladi. Bizning aybimiz bilan marketpleys qabul qilmagan partiya bepul qayta qadoqlanadi va yetkaziladi.
+          </div>
+        </div>
+
+        <div class="faq-item floating-card overflow-hidden">
+          <button type="button" onclick="toggleFaq(this)" class="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-[#0B2345] dark:text-white">
+            <span data-i18n="faq5_q">5. Qanday qilib hamkorlikni boshlash va chegirma olish mumkin?</span>
+            <span class="faq-icon text-[#2563EB] transition-transform duration-200">▼</span>
+          </button>
+          <div class="faq-body hidden px-5 pb-5 text-xs sm:text-sm text-[#475A78] dark:text-slate-300 leading-relaxed" data-i18n="faq5_a">
+            Saytdagi kalkulyator yoki aloqa formasi orqali so'rov qoldiring, yoki to'g'ridan-to'g'ri +998 95 980 88 17 raqamiga qo'ng'iroq qiling hamda maxsus yopiq Telegram guruhimizga qo'shilib, birinchi partiya uchun individual chegirmaga ega bo'ling!
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BIZ BILAN BOG'LANISH & YANDEX MAP ================= -->
+  <section id="contact" class="py-20 border-t border-[#D6E3F6] dark:border-[#233652]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-8 items-stretch reveal-up">
+        
+        <!-- Left: Contact info + Live Yandex Map (5 cols, exact height matched to Form) -->
+        <div class="lg:col-span-5 flex flex-col justify-between gap-3.5">
+          <div class="space-y-2">
+            <div class="badge-pill" data-i18n="cnt_badge">BIZ BILAN BOG'LANISH</div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0B2345] dark:text-white font-sans leading-tight">
+              <span data-i18n="cnt_title_1">Hamkorlikni</span>
+              <span class="font-serif italic text-[#2563EB] dark:text-[#60A5FA]" data-i18n="cnt_title_2">bugunoq boshlang</span>
+            </h2>
+            <p class="text-xs sm:text-sm text-[#475A78] dark:text-slate-300 leading-relaxed" data-i18n="cnt_sub">
+              Ma'lumotlaringizni qoldiring yoki yopiq Telegram guruhimizga qo'shiling — mutaxassislarimiz 10 daqiqa ichida siz bilan bog'lanib, bepul smeta tayyorlab berishadi.
+            </p>
+          </div>
+
+          <div class="space-y-2.5 text-xs">
+            <div class="floating-card p-3.5 flex items-start gap-3">
+              <span class="w-8 h-8 rounded-xl bg-[#E6F0FE] dark:bg-[#1A2D4D] text-[#2563EB] flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </span>
+              <div>
+                <div class="font-bold text-[#0B2345] dark:text-white" data-i18n="cnt_addr_lbl">Ombor va Ofis manzili:</div>
+                <div class="text-[#475A78] dark:text-slate-300 mt-0.5 leading-snug" data-i18n="cnt_addr_val">Toşkent ş., Yangihayot (Sergeli) tumani, Sofdil kõçasi, Tashkent Index savdo-logistika markazi</div>
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-2.5">
+              <div class="floating-card p-3.5 flex items-start gap-2.5">
+                <span class="w-8 h-8 rounded-xl bg-[#E6F0FE] dark:bg-[#1A2D4D] text-[#2563EB] flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                  </svg>
+                </span>
+                <div>
+                  <div class="font-bold text-[#0B2345] dark:text-white" data-i18n="cnt_phone_lbl">Telefon va Messenjerlar:</div>
+                  <div class="mt-0.5">
+                    <a href="tel:+998959808817" class="font-extrabold text-xs sm:text-sm text-[#2563EB] hover:underline whitespace-nowrap">+998 95 980 88 17</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="floating-card p-3.5 flex items-start gap-2.5">
+                <span class="w-8 h-8 rounded-xl bg-[#E6F0FE] dark:bg-[#1A2D4D] text-[#2563EB] flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </span>
+                <div>
+                  <div class="font-bold text-[#0B2345] dark:text-white" data-i18n="cnt_hours_lbl">Iş vaqti:</div>
+                  <div class="text-[#475A78] dark:text-slate-300 mt-0.5 leading-snug" data-i18n="cnt_hours_val">Duşanba – Şanba: 09:00 — 19:00</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Embedded Yandex Map Widget (Tashkent Index: 41.199110, 69.237777) -->
+          <div class="floating-card overflow-hidden p-2 flex flex-col justify-between flex-1 min-h-[170px]">
+            <div class="rounded-xl overflow-hidden flex-1 min-h-[135px] w-full bg-slate-200">
+              <iframe src="https://yandex.uz/map-widget/v1/?ll=69.237888%2C41.199121&z=17&pt=69.237777,41.199110,pm2rdm" width="100%" height="100%" frameborder="0" allowfullscreen="true" loading="lazy" title="MegaFulfilment Tashkent Index Yandex Map"></iframe>
+            </div>
+            <a href="https://yandex.uz/maps/10335/tashkent/?ll=69.237888%2C41.199121&mode=poi&poi%5Bpoint%5D=69.237777%2C41.199110&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D35089258940&z=21" target="_blank" rel="noopener" class="block pt-2 pb-1 text-center text-xs font-extrabold text-[#2563EB] hover:underline" data-i18n="cnt_open_map">
+              Yandex Xaritada yo'nalishni ochish ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Lead Capture Form (7 cols, stretches to match Left column 1:1) -->
+        <div class="lg:col-span-7 floating-card p-6 sm:p-8 flex flex-col justify-between h-full">
+          <form id="contact-form" onsubmit="submitMegaLead(event, 'telegram')" class="flex flex-col justify-between h-full gap-4">
+            
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-[#0B2345] dark:text-white mb-1.5" data-i18n="cnt_form_name">Ismingiz va do'koningiz nomi</label>
+                <input type="text" id="contact-name" required data-i18n-placeholder="cnt_form_name_ph" placeholder="Masalan: Sardor (Uzum Seller)" class="w-full px-4 py-3 rounded-xl border border-[#CDDBF0] dark:border-slate-700 bg-white dark:bg-[#081326] text-[#0B2345] dark:text-white text-sm focus:outline-none focus:border-[#2563EB]">
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-[#0B2345] dark:text-white mb-1.5" data-i18n="cnt_form_mp">Qaysi marketpleysda sotasiz?</label>
+                <select id="contact-mp" class="w-full px-4 py-3 rounded-xl border border-[#CDDBF0] dark:border-slate-700 bg-white dark:bg-[#081326] text-[#0B2345] dark:text-white text-sm focus:outline-none focus:border-[#2563EB]">
+                  <option value="Uzum Market">Uzum Market</option>
+                  <option value="Wildberries">Wildberries</option>
+                  <option value="Yandex Market">Yandex Market</option>
+                  <option value="Ozon">Ozon</option>
+                  <option value="Barça marketpleyslar">Uzum + WB + Yandex + Ozon</option>
+                  <option value="Xitoydan Kargo + Fulfillment" data-i18n="cnt_mp_cargo">Xitoydan Kargo + Fulfillment</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-[#0B2345] dark:text-white mb-1.5" data-i18n="cnt_form_phone">Telefon raqamingiz</label>
+              <div class="flex gap-2">
+                <div class="relative shrink-0" id="phoneCountry">
+                  <button type="button" onclick="togglePhoneCountryMenu(event)" aria-haspopup="true" class="h-full px-3.5 py-3 rounded-xl border border-[#CDDBF0] dark:border-slate-700 bg-[#F2F7FF] dark:bg-[#122240] text-xs font-bold text-[#0B2345] dark:text-white flex items-center gap-2 hover:border-[#2563EB] transition">
+                    <svg id="phoneCountryFlag" class="w-5 h-3.5 rounded-[2px] shadow-sm shrink-0" viewBox="0 0 30 20"><rect width="30" height="6.5" fill="#0099B5"/><rect width="30" height="0.6" y="6.5" fill="#CE1126"/><rect width="30" height="5.8" y="7.1" fill="#FFFFFF"/><rect width="30" height="0.6" y="12.9" fill="#CE1126"/><rect width="30" height="6.5" y="13.5" fill="#1EB53A"/></svg>
+                    <span id="phoneCountryDial">+998</span>
+                    <svg id="phoneCountryChevron" class="w-3 h-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                  </button>
+                  <div id="phoneCountryMenu" class="hidden absolute left-0 mt-2 z-50 w-56 bg-white dark:bg-[#172947] border border-[#D0DEF4] dark:border-[#2C4264] rounded-2xl shadow-lg p-1 text-xs font-bold text-[#0B2345] dark:text-white">
+                    <button type="button" onclick="setPhoneCountry('uz')" data-phone-country="uz" data-dial="+998" data-digits="9" data-placeholder="95 980 88 17" class="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-left transition hover:text-[#2563EB] hover:bg-[#E1ECFC] dark:hover:bg-[#273C5E]">
+                      <svg class="w-5 h-3.5 rounded-[2px] shadow-sm shrink-0" viewBox="0 0 30 20"><rect width="30" height="6.5" fill="#0099B5"/><rect width="30" height="0.6" y="6.5" fill="#CE1126"/><rect width="30" height="5.8" y="7.1" fill="#FFFFFF"/><rect width="30" height="0.6" y="12.9" fill="#CE1126"/><rect width="30" height="6.5" y="13.5" fill="#1EB53A"/></svg>
+                      <span class="flex-1" data-i18n="cnt_country_uz">Õzbekiston</span>
+                      <span class="text-[#5B6D8A] dark:text-slate-400">+998</span>
+                    </button>
+                    <button type="button" onclick="setPhoneCountry('ru')" data-phone-country="ru" data-dial="+7" data-digits="10" data-placeholder="912 345 67 89" class="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-left transition hover:text-[#2563EB] hover:bg-[#E1ECFC] dark:hover:bg-[#273C5E]">
+                      <svg class="w-5 h-3.5 rounded-[2px] shadow-sm shrink-0" viewBox="0 0 30 20"><rect width="30" height="6.7" fill="#FFFFFF"/><rect width="30" height="6.7" y="6.7" fill="#0039A6"/><rect width="30" height="6.6" y="13.4" fill="#D52B1E"/></svg>
+                      <span class="flex-1" data-i18n="cnt_country_ru">Rossiya</span>
+                      <span class="text-[#5B6D8A] dark:text-slate-400">+7</span>
+                    </button>
+                    <button type="button" onclick="setPhoneCountry('kz')" data-phone-country="kz" data-dial="+7" data-digits="10" data-placeholder="701 234 56 78" class="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-left transition hover:text-[#2563EB] hover:bg-[#E1ECFC] dark:hover:bg-[#273C5E]">
+                      <svg class="w-5 h-3.5 rounded-[2px] shadow-sm shrink-0" viewBox="0 0 30 20"><rect width="30" height="20" fill="#00AFCA"/><circle cx="15" cy="10" r="4.5" fill="#FEC50C"/></svg>
+                      <span class="flex-1" data-i18n="cnt_country_kz">Qozoğiston</span>
+                      <span class="text-[#5B6D8A] dark:text-slate-400">+7</span>
+                    </button>
+                    <button type="button" onclick="setPhoneCountry('kg')" data-phone-country="kg" data-dial="+996" data-digits="9" data-placeholder="700 123 456" class="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-left transition hover:text-[#2563EB] hover:bg-[#E1ECFC] dark:hover:bg-[#273C5E]">
+                      <svg class="w-5 h-3.5 rounded-[2px] shadow-sm shrink-0" viewBox="0 0 30 20"><rect width="30" height="20" fill="#E8112D"/><circle cx="15" cy="10" r="5" fill="#FFEF00"/><circle cx="15" cy="10" r="2.6" fill="#E8112D"/></svg>
+                      <span class="flex-1" data-i18n="cnt_country_kg">Qirğiziston</span>
+                      <span class="text-[#5B6D8A] dark:text-slate-400">+996</span>
+                    </button>
+                    <button type="button" onclick="setPhoneCountry('cn')" data-phone-country="cn" data-dial="+86" data-digits="11" data-placeholder="131 2345 6789" class="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-left transition hover:text-[#2563EB] hover:bg-[#E1ECFC] dark:hover:bg-[#273C5E]">
+                      <svg class="w-5 h-3.5 rounded-[2px] shadow-sm shrink-0" viewBox="0 0 30 20"><rect width="30" height="20" fill="#DE2910"/><polygon points="7,3 8.4,7.4 13,7.4 9.3,10.1 10.7,14.5 7,11.8 3.3,14.5 4.7,10.1 1,7.4 5.6,7.4" fill="#FFDE00"/></svg>
+                      <span class="flex-1" data-i18n="cnt_country_cn">Xitoy</span>
+                      <span class="text-[#5B6D8A] dark:text-slate-400">+86</span>
+                    </button>
+                    <button type="button" onclick="setPhoneCountry('tj')" data-phone-country="tj" data-dial="+992" data-digits="9" data-placeholder="90 123 45 67" class="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-left transition hover:text-[#2563EB] hover:bg-[#E1ECFC] dark:hover:bg-[#273C5E]">
+                      <svg class="w-5 h-3.5 rounded-[2px] shadow-sm shrink-0" viewBox="0 0 30 20"><rect width="30" height="5.7" fill="#CC0000"/><rect width="30" height="8.6" y="5.7" fill="#FFFFFF"/><rect width="30" height="5.7" y="14.3" fill="#006600"/><circle cx="15" cy="10" r="2" fill="#F8C300"/></svg>
+                      <span class="flex-1" data-i18n="cnt_country_tj">Tojikiston</span>
+                      <span class="text-[#5B6D8A] dark:text-slate-400">+992</span>
+                    </button>
+                  </div>
+                </div>
+                <input type="tel" id="contact-phone" required oninput="this.setCustomValidity('')" placeholder="95 980 88 17" class="flex-1 min-w-0 px-4 py-3 rounded-xl border border-[#CDDBF0] dark:border-slate-700 bg-white dark:bg-[#081326] text-[#0B2345] dark:text-white text-sm focus:outline-none focus:border-[#2563EB]">
+              </div>
+            </div>
+
+            <div class="flex-1 flex flex-col">
+              <div class="flex justify-between items-center mb-1.5">
+                <label class="text-xs font-bold text-[#0B2345] dark:text-white" data-i18n="cnt_form_msg">Tovar turi va soni haqida qisqacha</label>
+                <span id="char-count" class="text-[11px] text-slate-400">0 / 1000</span>
+              </div>
+              <textarea id="contact-msg" rows="5" maxlength="1000" oninput="updateCharCount()" data-i18n-placeholder="cnt_form_msg_ph" placeholder="Masalan: Kiyim-kechak, 500 dona, Uzum FBO uchun qadoqlash kerak..." class="w-full flex-1 min-h-[130px] px-4 py-3 rounded-xl border border-[#CDDBF0] dark:border-slate-700 bg-white dark:bg-[#081326] text-[#0B2345] dark:text-white text-sm focus:outline-none focus:border-[#2563EB]"></textarea>
+            </div>
+
+            <!-- Action Buttons: 2 Ways (Telegram & WhatsApp) -->
+            <div class="grid sm:grid-cols-2 gap-3.5 pt-1">
+              <button type="button" onclick="submitMegaLead(event, 'telegram')" class="w-full py-4 rounded-full font-extrabold text-xs sm:text-sm primary-gradient-btn shadow-lg flex items-center justify-center gap-2.5 px-4">
+                <img src="assets/icon-telegram.png" alt="Telegram" class="w-5 h-5 object-contain shrink-0">
+                <span data-i18n="cnt_btn_tg">Bepul smeta oliş (Telegram)</span>
+              </button>
+
+              <button type="button" onclick="submitMegaLead(event, 'whatsapp')" class="w-full py-4 rounded-full font-extrabold text-xs sm:text-sm bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-lg transition flex items-center justify-center gap-2.5 px-4">
+                <img src="assets/icon-whatsapp.png" alt="WhatsApp" class="w-5 h-5 object-contain brightness-110 shrink-0">
+                <span data-i18n="cnt_btn_wa">Bepul smeta oliş (WhatsApp)</span>
+              </button>
+            </div>
+
+            <p class="text-center text-xs font-semibold text-emerald-600 dark:text-emerald-400" data-i18n="cnt_promise">10 daqiqa içida javob beramiz</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="py-12 border-t border-[#D6E3F6] dark:border-[#233652] text-xs text-[#475A78] dark:text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      
+      <!-- Social Media Quick Buttons (1:1 Pill Design) -->
+      <div class="flex flex-wrap items-center justify-center gap-3.5">
+        <a href="https://t.me/megaffuz" target="_blank" rel="noopener" class="inline-flex items-center gap-3 pl-2 pr-6 py-2 rounded-full border border-[#D9E4F5] dark:border-slate-700 bg-white dark:bg-[#0F1D36] text-sm font-medium text-[#0B2345] dark:text-white hover:border-[#2563EB] hover:shadow-md transition shadow-sm">
+          <span class="w-9 h-9 rounded-full bg-white dark:bg-[#172947] border border-slate-200/80 dark:border-slate-700 shadow-sm flex items-center justify-center shrink-0">
+            <img src="assets/icon-telegram.png" alt="Telegram" class="w-5 h-5 object-contain">
+          </span>
+          <span>Telegram</span>
+        </a>
+        <a href="https://instagram.com/megaff.uz" target="_blank" rel="noopener" class="inline-flex items-center gap-3 pl-2 pr-6 py-2 rounded-full border border-[#D9E4F5] dark:border-slate-700 bg-white dark:bg-[#0F1D36] text-sm font-medium text-[#0B2345] dark:text-white hover:border-[#2563EB] hover:shadow-md transition shadow-sm">
+          <span class="w-9 h-9 rounded-full bg-white dark:bg-[#172947] border border-slate-200/80 dark:border-slate-700 shadow-sm flex items-center justify-center shrink-0">
+            <img src="assets/icon-instagram.png" alt="Instagram" class="w-5 h-5 object-contain">
+          </span>
+          <span>Instagram</span>
+        </a>
+        <a href="https://wa.me/998959808817" target="_blank" rel="noopener" class="inline-flex items-center gap-3 pl-2 pr-6 py-2 rounded-full border border-[#D9E4F5] dark:border-slate-700 bg-white dark:bg-[#0F1D36] text-sm font-medium text-[#0B2345] dark:text-white hover:border-[#2563EB] hover:shadow-md transition shadow-sm">
+          <span class="w-9 h-9 rounded-full bg-white dark:bg-[#172947] border border-slate-200/80 dark:border-slate-700 shadow-sm flex items-center justify-center shrink-0">
+            <img src="assets/icon-whatsapp.png" alt="WhatsApp" class="w-5 h-5 object-contain">
+          </span>
+          <span>WhatsApp</span>
+        </a>
+        <a href="tel:+998959808817" class="inline-flex items-center gap-3 pl-2 pr-6 py-2 rounded-full border border-[#D9E4F5] dark:border-slate-700 bg-white dark:bg-[#0F1D36] text-sm font-medium text-[#0B2345] dark:text-white hover:border-[#2563EB] hover:shadow-md transition shadow-sm">
+          <span class="w-9 h-9 rounded-full bg-white dark:bg-[#172947] border border-slate-200/80 dark:border-slate-700 shadow-sm flex items-center justify-center shrink-0">
+            <svg class="w-4 h-4 text-[#22C55E]" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+          </span>
+          <span data-i18n="footer_phone">Telefon</span>
+        </a>
+        <a href="https://youtube.com/@megaffuz" target="_blank" rel="noopener" class="inline-flex items-center gap-3 pl-2 pr-6 py-2 rounded-full border border-[#D9E4F5] dark:border-slate-700 bg-white dark:bg-[#0F1D36] text-sm font-medium text-[#0B2345] dark:text-white hover:border-[#2563EB] hover:shadow-md transition shadow-sm">
+          <span class="w-9 h-9 rounded-full bg-white dark:bg-[#172947] border border-slate-200/80 dark:border-slate-700 shadow-sm flex items-center justify-center shrink-0">
+            <img src="assets/icon-youtube.png" alt="YouTube" class="w-5 h-5 object-contain">
+          </span>
+          <span>YouTube</span>
+        </a>
+        <a href="https://facebook.com/megaff.uz" target="_blank" rel="noopener" class="inline-flex items-center gap-3 pl-2 pr-6 py-2 rounded-full border border-[#D9E4F5] dark:border-slate-700 bg-white dark:bg-[#0F1D36] text-sm font-medium text-[#0B2345] dark:text-white hover:border-[#2563EB] hover:shadow-md transition shadow-sm">
+          <span class="w-9 h-9 rounded-full bg-white dark:bg-[#172947] border border-slate-200/80 dark:border-slate-700 shadow-sm flex items-center justify-center shrink-0">
+            <img src="assets/icon-facebook.png" alt="Facebook" class="w-5 h-5 object-contain">
+          </span>
+          <span>Facebook</span>
+        </a>
+        
+      </div>
+
+      <!-- Bottom Line -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-6 border-t border-[#D6E3F6] dark:border-[#233652] text-center md:text-left">
+        <div class="flex items-center justify-center md:justify-start gap-2.5">
+          <img src="Logo.png" alt="MegaFulfilment Logo" class="w-7 h-7 rounded-lg object-contain bg-white p-0.5 shadow-sm shrink-0">
+          <span data-i18n="footer_rights">© 2026 MegaFulfilment (megaff.uz) — Barça huquqlar himoyalangan.</span>
+        </div>
+        <div data-i18n="cnt_addr_val">
+          Toshkent sh., Yangihayot (Sergeli) tumani, Sofdil ko'chasi, Tashkent Index savdo-logistika markazi
+        </div>
+        <div>
+          <a href="https://t.me/megaffuz" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 font-bold border border-emerald-500/20">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>24/7 Online</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= MODAL: LITRDA HISOBLASH ================= -->
+  <div id="litr-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+    <div class="floating-card p-6 sm:p-8 max-w-md w-full relative bg-white dark:bg-[#0B2345]">
+      <button onclick="closeLitrModal()" class="absolute top-4 right-4 text-slate-400 hover:text-black dark:hover:text-white p-2">✕</button>
+      <h3 class="text-lg font-extrabold text-[#0B2345] dark:text-white mb-1" data-i18n="litr_title">Litr (Hajm) bõyiça aniq kalkulyator</h3>
+      <p class="text-xs text-[#475A78] dark:text-slate-400 mb-4" data-i18n="litr_sub">Quti õlçamlarini santimetrda kiriting (Uzunlik × Kenglik × Balandlik / 1000 = Litr):</p>
+      
+      <div class="space-y-3">
+        <div class="grid grid-cols-3 gap-2">
+          <div>
+            <label class="block text-[11px] font-bold mb-1" data-i18n="litr_len">Uzunlik (sm)</label>
+            <input type="number" id="litr-len" value="25" min="1" oninput="calcLitr()" class="w-full px-3 py-2 rounded-xl border border-[#CDDBF0] dark:border-slate-700 bg-white dark:bg-[#081326] text-sm font-bold">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold mb-1" data-i18n="litr_wid">Kenglik (sm)</label>
+            <input type="number" id="litr-wid" value="20" min="1" oninput="calcLitr()" class="w-full px-3 py-2 rounded-xl border border-[#CDDBF0] dark:border-slate-700 bg-white dark:bg-[#081326] text-sm font-bold">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold mb-1" data-i18n="litr_hgt">Balandlik (sm)</label>
+            <input type="number" id="litr-hgt" value="10" min="1" oninput="calcLitr()" class="w-full px-3 py-2 rounded-xl border border-[#CDDBF0] dark:border-slate-700 bg-white dark:bg-[#081326] text-sm font-bold">
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block text-xs font-bold mb-1" data-i18n="litr_vol">Hajmi (litr):</label>
+            <input type="number" id="litr-input" value="5.0" step="0.5" readonly class="w-full px-3 py-2 rounded-xl border border-[#CDDBF0] dark:border-slate-700 bg-[#F2F7FF] dark:bg-[#122240] text-sm font-bold">
+          </div>
+          <div>
+            <label class="block text-xs font-bold mb-1" data-i18n="calc_qty_label">Tovar soni (dona):</label>
+            <input type="number" id="litr-qty" value="500" step="50" min="1" oninput="calcLitr()" class="w-full px-3 py-2 rounded-xl border border-[#CDDBF0] dark:border-slate-700 bg-white dark:bg-[#081326] text-sm font-bold">
+          </div>
+        </div>
+        <div class="p-3.5 rounded-xl bg-[#F2F7FF] dark:bg-[#122240] space-y-1 text-center">
+          <div class="text-xs text-[#475A78] dark:text-slate-400"><span data-i18n="litr_rate">1 dona uçun tarif:</span> <strong id="litr-unit-rate" class="text-[#0B2345] dark:text-white">1 300 sõm (5 L)</strong></div>
+          <div class="font-extrabold text-base text-[#2563EB]"><span data-i18n="litr_total">Jami:</span> <span id="litr-result">650 000 sõm</span></div>
+        </div>
+        <button onclick="closeLitrModal()" class="w-full primary-gradient-btn py-3 rounded-full text-xs font-extrabold" data-i18n="litr_close">
+          Tuşunarli / Yopiş
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= TOAST NOTIFICATION ================= -->
+  <div id="toast" class="hidden fixed bottom-6 right-6 z-50 bg-[#0B2345] text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 text-xs font-bold border border-[#2563EB]">
+    <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+      </svg>
+    </span>
+    <span id="toast-text" data-i18n="toast_default">Xabaringiz qabul qilindi!</span>
+  </div>
+
+  <!-- Shared Multi-Language & Interactive Engine -->
+  <script src="js/i18n-data.js"></script>
+  <script src="js/app-core.js"></script>
+
+  <!-- Floating messenger buttons -->
+  <div class="fixed right-4 bottom-4 z-50 flex flex-col gap-3">
+    <a href="https://t.me/megaffuz" target="_blank" rel="noopener" aria-label="Telegram" class="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:scale-110 transition"><img src="assets/icon-telegram.png" alt="Telegram" class="w-6 h-6 object-contain"></a>
+  </div>
+</body>
+</html>
