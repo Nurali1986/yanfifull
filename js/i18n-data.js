@@ -80,7 +80,7 @@ window.MEGA_I18N = {
     // Hero (Variant 1 - Baraka 1:1)
     v1_hero_badge: "MARKETPLEYS SOTUVÇILARI UÇUN FULFILLMENT",
     v1_hero_title_1: "Tovaringizni qadoqlaşga vaqt sarflamang —",
-    v1_hero_title_2: "bu işni bizga topşiring",
+    v1_hero_title_2: "buni professionallarga topşiring",
     v1_hero_sub: "Siz savdoni rivojlantiring, buyurtmalarni qadoqlaşni biz bajaramiz. Tovarni qabul qiliş, tekşiriş, qadoqlaş, etiketkalaş va marketpleys omboriga yetkazib beriş — barçasi bir xizmatda.",
     v1_cta_calc: "Bepul smeta oliş",
     v1_cta_contact: "Bepul konsultatsiya",
@@ -439,7 +439,7 @@ window.MEGA_I18N = {
 
     v1_hero_badge: "ФУЛФИЛМЕНТ ДЛЯ ПРОДАВЦОВ МАРКЕТПЛЕЙСОВ",
     v1_hero_title_1: "Не тратьте время на упаковку товара —",
-    v1_hero_title_2: "доверьте это нам",
+    v1_hero_title_2: "доверьте это профессионалам",
     v1_hero_sub: "Развивайте продажи, а упаковку заказов мы берём на себя. Приёмка, проверка, упаковка, этикетирование и доставка на склад маркетплейса — всё в одной услуге.",
     v1_cta_calc: "Получить смету бесплатно",
     v1_cta_contact: "Бесплатная консультация",
@@ -796,7 +796,7 @@ window.MEGA_I18N = {
 
     v1_hero_badge: "FULFILLMENT FOR MARKETPLACE SELLERS",
     v1_hero_title_1: "Don't spend your time packing products —",
-    v1_hero_title_2: "hand that job over to us",
+    v1_hero_title_2: "leave it to the professionals",
     v1_hero_sub: "You grow your sales, we pack the orders. Receiving, inspection, packing, labeling and delivery to the marketplace warehouse — all in one service.",
     v1_cta_calc: "Get a free quote",
     v1_cta_contact: "Free Consultation",
@@ -1153,7 +1153,7 @@ window.MEGA_I18N = {
 
     v1_hero_badge: "面向电商卖家的履约服务",
     v1_hero_title_1: "别再把时间花在打包上——",
-    v1_hero_title_2: "把这件事交给我们",
+    v1_hero_title_2: "把这件事交给专业人士",
     v1_hero_sub: "你专注拓展销售，订单打包交给我们。收货、检查、打包、贴标并送至平台仓库——一站式完成。",
     v1_cta_calc: "免费获取报价",
     v1_cta_contact: "免费获取报价方案",
